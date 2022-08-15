@@ -1,4 +1,4 @@
-// load .env data into process.env
+// load .env data into process.env // load the .env!
 require("dotenv").config();
 
 // Web server config
@@ -55,3 +55,5 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+
