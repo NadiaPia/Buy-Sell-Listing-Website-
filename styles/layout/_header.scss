@@ -1,0 +1,82 @@
+.main-header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  width: 100vw;
+  padding: 0 10vw;
+  color: black;
+  z-index: 1;
+  transition: 0.4s ease-out;
+  a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+
+    &__link {
+      a {
+        margin: 0.2rem;
+        padding: 1rem 0.5rem;
+      }
+      a:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+  &__menu-icon {
+    position: relative;
+    padding: 26px 10px;
+    cursor: pointer;
+    z-index: 1;
+    // display: none;
+
+    &--line {
+      display: block;
+      position: relative;
+      background: black;
+      height: 2px;
+      width: 2rem;
+      border-radius: 4px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        background: black;
+        transition: background 0.8s ease;
+      }
+      &::before {
+        transform: translateY(-5px);
+      }
+      &::after {
+        transform: translateY(5px);
+      }
+    }
+  }
+  &__menu-btn {
+    display: none;
+  }
+
+  &__scrolled {
+    height: 50px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+
+    .main-header__menu-icon {
+      &--line,
+      &--line::before,
+      &--line::after {
+        background: #fff;
+      }
+    }
+  }
+}
