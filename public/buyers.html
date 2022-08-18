@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/icon_font.css" />
     <link rel="stylesheet" href="./styles/main.css" />
+    
     <link
       href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
       rel="stylesheet"
     />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="scripts/buyers.js"></script> <!--Nadia-->
+
     <title>Document</title>
   </head>
   <body>
@@ -32,15 +38,75 @@
           >Discover Your Next masterpeice</a
         >
       </div>
+
+      <!-- Nadia start -->
+      <div class="choose" style="display:flex; flex-direction: row;">
+        
+        <button class="filter">filter</button>
+        
+        <form class="search_filter" action="/search" method="POST">        
+          <textarea name="text" id="search_pic" placeholder="search by name or description"></textarea>   
+        </form> 
+    </div>
+      
+      <!-- Nadia finish -->
+
+      
     </header>
     <main>
       <section class="section-buyers-art">
-        <div class="u-center-text u-margin-bottom-big">
+        <div class="u-center-text u-margin-bottom-big" style="display:flex; flex-direction: row;"> <!-- Nadia: style="display:flex; flex-direction: row;"-->
+          <!-- Nadia start-->
+          <div class="slideText" style="display: none">
+            <form action="/properties" method="get" id="search-property-form" class="search-property-form">
+              <div class="search-property-form__field-wrapper">
+                <label for="search-property-form__city">City</label>
+                <input type="text" name="city" placeholder="City" id="search-property-form__city">
+              </div>
+        
+              <div class="search-property-form__field-wrapper">
+                <label for="search-property-form__minimum-price-per-night">Price</label>
+                <input style="width: 70px;" type="number" name="minimum_price_per_night" placeholder="Minimum Cost" id="search-property-form__minimum-price-per-night">
+                <label for="search-property-form__maximum-price-per-night">to</label>
+                <input style="width: 70px;" type="number" name="maximum_price_per_night" placeholder="Maximum Cost" id="search-property-form__maximum-price-per-night">
+              </div>
+
+              <div class="search-property-form__field-wrapper">
+                <label for="size">Size:</label>
+                <label for="size1">post_card</label>
+                <input type="checkbox" id="size1">
+                <label for="size2">letter</label>
+                <input type="checkbox" id="size2">
+                <label for="size3">poster</label>
+                <input type="checkbox" id="size3">
+              </div>
+        
+              <div class="search-property-form__field-wrapper">
+                <label for="search-available">Available</label>
+                <input type="checkbox">
+              </div>
+
+              <div class="search-property-form__field-wrapper">
+                <label for="favorites">Favorites</label>
+                <input type="checkbox">
+              </div>
+        
+              <div class="search-property-form__field-wrapper">
+                  <button>Search</button>
+                  <a id="search-property-form__cancel" href="#">Cancel</a>
+              </div>
+            </form>
+          </div> <!-- Nadia finish-->
           <h2 class="heading-secondary">our featured art</h2>
         </div>
         <div class="row">
           <div class="col-1-of-3">
             <!-- start of single card -->
+
+
+            
+
+
             <div class="card">
               <div class="card__side card__side--front">
                 <div class="card__picture card__picture--1">&nbsp;</div>
