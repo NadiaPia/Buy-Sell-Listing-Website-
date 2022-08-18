@@ -3,11 +3,13 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import "components/_navbar";
 @import "components/feature-box";
 @import "components/card";
 @import "components/composition";
 @import "components/button";
 
+@import "layout/sellers_header";
 @import "layout/grid";
 @import "layout/header";
 
