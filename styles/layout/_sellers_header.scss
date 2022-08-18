@@ -1,4 +1,4 @@
-.header {
+.sellers-header {
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
@@ -8,8 +8,10 @@
     url("../img/city_background.png");
   background-size: cover;
   background-position: top;
+  background-color: var(--color-grey-light-1);
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   &__logo-box {
     position: absolute;
@@ -22,8 +24,6 @@
   }
 
   &__text-box {
-    display: flex;
-    flex-direction: column;
     position: absolute;
     top: 40%;
     left: 50%;
