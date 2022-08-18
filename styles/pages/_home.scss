@@ -1,11 +1,24 @@
 .section-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--color-grey-light-1);
   padding: 25rem 0;
   margin-top: -20vh;
+
+  .about-btn {
+    flex-shrink: 0;
+    width: fit-content;
+    margin: 1rem 0;
+    padding: 0 0.5rem;
+  }
 }
 
 .section-features {
+  display: flex;
+  justify-content: space-between;
   padding: 20rem 0;
+  flex-shrink: 0;
   background-image: linear-gradient(
       to right bottom,
       rgba(255, 160, 113, 0.803),
@@ -22,6 +35,9 @@
 }
 
 .section-art {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: var(--color-grey-light-1);
   padding: 25rem 0 15rem 0;
   margin-top: -10rem;
