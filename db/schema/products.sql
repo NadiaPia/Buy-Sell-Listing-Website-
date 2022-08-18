@@ -8,7 +8,6 @@ create table products (
 	seller_id INT REFERENCES users(id) ON DELETE CASCADE,
   description VARCHAR(255) NOT NULL,
   prompts VARCHAR(255) NOT NULL,
-  available_sizes VARCHAR(100) NOT NULL,
 	sold BOOLEAN DEFAULT false
 );
 
