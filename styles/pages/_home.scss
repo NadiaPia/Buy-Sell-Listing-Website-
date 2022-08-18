@@ -1,11 +1,21 @@
 .section-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background-color: var(--color-grey-light-1);
   padding: 25rem 0;
   margin-top: -20vh;
+
+  .about-btn {
+    width: 15vw;
+    margin: 1rem 0;
+  }
 }
 
 .section-features {
+  display: flex;
   padding: 20rem 0;
+  justify-content: space-evenly;
   background-image: linear-gradient(
       to right bottom,
       rgba(255, 160, 113, 0.803),
