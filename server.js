@@ -52,14 +52,18 @@ app.get("/", (req, res) => {
   console.log('sending index page');
   res.render("index");
 });
-
+app.get('/login', (req, res) => {
+  res.render('login');
+})
 app.get('/sellers', (req, res) => {
-  res.render('sellers')
+  res.render('sellers');
 });
-
 app.get('/buyers', (req, res) => {
-  res.render('buyers')
+  res.render('buyers');
 });
+app.get('/contact', (req, res) => {
+  res.render('contact');
+})
 // -------------------------------------------------------------
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
