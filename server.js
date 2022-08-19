@@ -1,5 +1,6 @@
 // load .env data into process.env // load the .env!
 require("dotenv").config();
+const database = require('./database');
 
 // Web server config
 const PORT = process.env.PORT || 8080;
@@ -7,6 +8,7 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const apiRoutes = require('./apiRoutes'); /*Nadia----------------------------------------*/
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -42,6 +44,16 @@ const widgetsRoutes = require("./routes/widgets");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+// /api/endpoints
+
+/*Nadia starst----------------------------------------------------------------------------*/
+
+const apiRouter = express.Router(); 
+apiRoutes(apiRouter, database);
+app.use('/api', apiRouter);
+
+/*Nadia Finish------------------------------------------------------------------------------*/
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page

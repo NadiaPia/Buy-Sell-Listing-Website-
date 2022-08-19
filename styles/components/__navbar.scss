@@ -23,6 +23,20 @@
 .nav-item:last-child {
   margin-top: auto;
 }
+/* Nadia start---------------------------------------------------------*/
+.filter {
+  position: relative;
+}
+
+.slideFilter {
+  background-color: var(--color-primary);
+  display: none;
+  position: absolute;
+  right: 0;
+  transform: translate(100%, -50%);
+  
+}
+/* Nadia finish---------------------------------------------------------*/
 
 .nav-link {
   display: flex;
