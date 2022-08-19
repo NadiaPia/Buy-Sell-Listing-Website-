@@ -24,6 +24,19 @@
   margin-top: auto;
 }
 
+.filter {
+  position: relative;
+}
+
+.slideFilter {
+  background-color: var(--color-primary);
+  display: none;
+  position: absolute;
+  right: 0;
+  transform: translate(100%, -50%);
+  
+}
+
 .nav-link {
   display: flex;
   align-items: center;
