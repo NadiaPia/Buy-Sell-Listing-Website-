@@ -23,10 +23,12 @@ body {
     font-weight: 400;
     letter-spacing: 3.5rem;
 
+    .ai {
+      transition: 1s ease-in-out;
+    }
     .ai:hover {
       font-size: 12rem;
       color: black;
-      transition: 1s ease-in-out;
     }
 
     animation-name: moveInLeft;
