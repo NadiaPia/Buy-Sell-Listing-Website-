@@ -48,7 +48,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 
 /*Nadia starst----------------------------------------------------------------------------*/
 
-const apiRouter = express.Router(); 
+const apiRouter = express.Router();
 apiRoutes(apiRouter, database);
 app.use('/api', apiRouter);
 
@@ -61,7 +61,6 @@ app.use('/api', apiRouter);
 // Separate them into separate routes files (see above).
 // -----------------------------------------------------------
 app.get("/", (req, res) => {
-  console.log('sending index page');
   res.render("index");
 });
 app.get('/login', (req, res) => {

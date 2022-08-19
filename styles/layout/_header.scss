@@ -207,6 +207,22 @@
   @include respond(phone) {
     -webkit-clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
     clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
+
+    .login-seller-btn {
+      margin-right: 4rem;
+    }
+
+    .login-buyer-btn {
+      margin-left: 4rem;
+    }
+
+    .login-heading-primary--main {
+      padding-left: 4px;
+    }
+
+    .login-header__logo {
+      margin-left: 1.5rem;
+    }
   }
 
   &__logo-box {
