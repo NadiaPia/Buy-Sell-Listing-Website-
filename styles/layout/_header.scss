@@ -12,8 +12,15 @@
   position: relative;
 
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 35%,
+      80% 100%,
+      20% 100%,
+      0 35%
+    );
+    clip-path: polygon(25% 0%, 75% 0%, 100% 35%, 80% 100%, 20% 100%, 0 35%);
     height: 95vh;
   }
 
@@ -28,13 +35,23 @@
       url("../img/city_background.png");
   }
   @include respond(phone) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 35%,
+      80% 100%,
+      20% 100%,
+      0 35%
+    );
+    clip-path: polygon(25% 0%, 75% 0%, 100% 35%, 80% 100%, 20% 100%, 0 35%);
   }
-
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+  }
   &__logo {
     height: 5.5rem;
-    margin: 5rem 0 0 5rem;
+    margin-top: 5rem;
   }
 
   &__text-box {
