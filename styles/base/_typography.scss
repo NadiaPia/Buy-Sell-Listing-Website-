@@ -28,6 +28,11 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-family: 5rem;
+    }
   }
 
   &--sub {
@@ -38,6 +43,10 @@ body {
     padding-top: 5rem;
     padding-left: 4rem;
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
@@ -58,6 +67,14 @@ body {
   letter-spacing: 2px;
   transition: all 0.2s;
 
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
   &:hover {
     transform: skewX(5deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.5);
@@ -77,26 +94,34 @@ body {
 
   &--main {
     display: flex;
-    flex: row;
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 1.5rem;
+    letter-spacing: 3.5rem;
     padding-top: 1rem;
     padding-left: 3rem;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-family: 5rem;
+    }
   }
 
   &--sub {
     display: flex;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 0.5rem;
-    padding-top: 1rem;
+    letter-spacing: 1.5rem;
+    padding-top: 5rem;
     padding-left: 4rem;
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
@@ -117,6 +142,14 @@ body {
   letter-spacing: 2px;
   transition: all 0.2s;
 
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
   &:hover {
     transform: skewX(5deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.5);
@@ -136,26 +169,34 @@ body {
 
   &--main {
     display: flex;
-    flex: row;
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 1.5rem;
+    letter-spacing: 3.5rem;
     padding-top: 1rem;
     padding-left: 3rem;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-family: 5rem;
+    }
   }
 
   &--sub {
     display: flex;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 0.5rem;
-    padding-top: 1rem;
+    letter-spacing: 1.5rem;
+    padding-top: 5rem;
     padding-left: 4rem;
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
@@ -175,6 +216,14 @@ body {
   color: transparent;
   letter-spacing: 2px;
   transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewX(5deg) scale(1.1);
