@@ -2,29 +2,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--color-grey-light-1);
-  padding: 25rem 0;
+  background-color: var(--color-white);
+  padding: 15rem 0;
   margin-top: -20vh;
+  margin-bottom: 40rem;
+  @include respond(phone) {
+    padding: 0;
+    margin: 0;
+  }
 
-  .about-btn {
-    flex-shrink: 0;
-    width: fit-content;
-    margin: 1rem 0;
-    padding: 0 0.5rem;
+  @include respond(tab-port) {
+    padding: 2rem;
+    margin: 2rem;
   }
 }
 
 .section-features {
   display: flex;
-  justify-content: space-between;
-  padding: 20rem 0;
+  justify-content: space-evenly;
   flex-shrink: 0;
+  padding: 20rem 0;
   background-image: linear-gradient(
       to right bottom,
       rgba(255, 160, 113, 0.803),
       rgba(229, 144, 101, 0.803)
     ),
-    url("../img/background01.jpg");
+    url("../img/mood01.png");
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -10rem;
@@ -35,9 +38,6 @@
 }
 
 .section-art {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   background-color: var(--color-grey-light-1);
   padding: 25rem 0 15rem 0;
   margin-top: -10rem;
@@ -46,11 +46,11 @@
 .section-sellers-art {
   background-color: var(--color-grey-light-1);
   padding: 25rem 0 15rem 0;
-  margin-top: -20vh;
+  margin-top: -10rem;
 }
 
 .section-buyers-art {
   background-color: var(--color-grey-light-1);
   padding: 25rem 0 15rem 0;
-  margin-top: -20vh;
+  margin-top: -10rem;
 }

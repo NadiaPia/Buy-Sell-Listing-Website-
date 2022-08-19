@@ -1,40 +1,22 @@
-//Daniel's section on database!
-
-// Filtering
-
-//
-
 require("dotenv").config();
-const { Pool } = require("pg");
-const dbParams = require("./lib/db.js");
-const db = new Pool(dbParams);
-db.connect();
+const { Pool } = require('pg');
 
-
-db.query(`Select * from users`, (err, res) => {
-  if (!err) {
-    console.log(res.rows[0]);
-  } else {
-    console.log(err.message);
-  }
-  db.end;
+const pool = new Pool({
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
 });
 
-
-const getUserByUsername = function(email) {
-  const theQuery = 'Select * from users WHERE user_name = $1;'
-  db
-    .query(theQuery, [email])
+const getIsSold = function(isSold) {
+  return pool.query(`SELECT * FROM products
+  WHERE sold = $1;`, [isSold])
     .then((result) => {
-      if (result.rows) {
-        return result.rows[0];
-      } else {
-        return null;
-      }
+      return result.rows;
     })
     .catch((err) => {
       console.log(err.message);
-    })
+    });
 }
-
-getUserByUsername();
+exports.getIsSold = getIsSold;
