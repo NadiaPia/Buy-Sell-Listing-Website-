@@ -49,7 +49,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 
 /*Nadia starst----------------------------------------------------------------------------*/
 
-const apiRouter = express.Router(); 
+const apiRouter = express.Router();
 apiRoutes(apiRouter, database);
 app.use('/api', apiRouter);
 
@@ -78,6 +78,13 @@ app.get('/contact', (req, res) => {
   res.render('contact');
 })
 // -------------------------------------------------------------
+
+// Daniel's section
+// maybe a page for filtering results?
+
+app.get('/search', (req, res) => {
+  res.render('search');
+})
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

@@ -1,0 +1,30 @@
+.search {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.filter-products {
+  font-size: 3em;
+  color: black;
+}
+
+img {
+  width:  600px;
+  height: 600px;
+
+}
+
+.featured {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+.desc {
+  font-weight: 600;
+  font-size: large;
+  color: black;
+}
