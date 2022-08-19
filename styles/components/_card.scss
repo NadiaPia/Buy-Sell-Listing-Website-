@@ -2,20 +2,17 @@
   // Functionality
   perspective: 150rem;
   -moz-perspective: 150rem;
-  // position: relative;
+  position: relative;
   height: 52rem;
 
   &__side {
     height: 52rem;
-    // display: flex;
-    // flex-direction: column;
-    // align-content: center;
     transition: all 0.8s ease;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    // backface-visibility: hidden;
+    backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
@@ -29,22 +26,22 @@
       &-1 {
         background-image: linear-gradient(
           to right bottom,
-          rgba(118, 137, 72, 0.85),
-          rgba(96, 119, 68, 0.85)
+          rgb(255, 185, 0),
+          rgb(255, 119, 48)
         );
       }
       &-2 {
         background-image: linear-gradient(
           to right bottom,
-          rgba(255, 186, 151, 0.85),
-          rgba(255, 119, 48, 0.85)
+          rgb(255, 186, 151),
+          rgb(208, 102, 49)
         );
       }
       &-3 {
         background-image: linear-gradient(
           to right bottom,
-          rgba(41, 152, 255, 0.85),
-          rgba(86, 67, 250, 0.85)
+          rgb(41, 152, 255),
+          rgb(86, 67, 250)
         );
       }
     }
@@ -61,8 +58,7 @@
 
   &__picture {
     background-size: cover;
-    height: 50rem;
-    width: 28vw;
+    height: 30rem;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -70,10 +66,10 @@
     border-top-right-radius: 3px;
 
     &--1 {
-      background-image: url("../img/outdoor3.png");
+      background-image: url("../img/pug1.png");
     }
     &--2 {
-      background-image: url("../img/pug1.png");
+      background-image: url("../img/outdoor3.png");
     }
     &--3 {
       background-image: url("../img/goldenpaladin.png");
@@ -99,15 +95,15 @@
     &--1 {
       background-image: linear-gradient(
         to right bottom,
-        rgba(118, 137, 72, 0.85),
-        rgba(96, 119, 68, 0.85)
+        rgba(255, 185, 0, 0.85),
+        rgba(255, 119, 48, 0.85)
       );
     }
     &--2 {
       background-image: linear-gradient(
         to right bottom,
         rgba(255, 186, 151, 0.85),
-        rgba(255, 119, 48, 0.85)
+        rgba(208, 102, 49, 0.85)
       );
     }
     &--3 {
@@ -120,18 +116,11 @@
   }
 
   &__details {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
     padding: 3rem;
 
     ul {
-      // display: flex;
-      // flex-direction: column;
-      // align-items: center;
       list-style: none;
       width: 80%;
-      // padding: 0;
       margin: 0 auto;
 
       li {
@@ -148,9 +137,6 @@
 
   // FRONT SIDE STYLING
   &__cta {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;

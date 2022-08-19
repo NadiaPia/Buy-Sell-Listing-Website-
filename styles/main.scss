@@ -1,3 +1,6 @@
+@import "abstracts/mixins";
+@import "abstracts/breakpoints";
+
 @import "base/animations";
 @import "base/base";
 @import "base/typography";
@@ -13,5 +16,3 @@
 @import "layout/header";
 
 @import "pages/home";
-
-@import "abstracts/breakpoints";
