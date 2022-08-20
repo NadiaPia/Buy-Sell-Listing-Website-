@@ -27,44 +27,50 @@
       <a href="#" class="buyers-btn btn btn--white btn--animated">Discover Your Next masterpeice</a>
     </div>
   </header>
+
+  <button id="btn-toggle">FILTER</button>
+
   <section class="search">
-    <div class="filter-products">
-      <label for="serch-products-form__minimum-price-per-night">Price</label>
-      <input style="width: 70px;" type="number" name="minimum_price_per_night" placeholder="Minimum Cost"
-        id="serch-products-form__minimum-price-per-night">
-      <label for="serch-products-form__maximum-price-per-night">to</label>
-      <input style="width: 70px;" type="number" name="maximum_price_per_night" placeholder="Maximum Cost"
-        id="serch-products-form__maximum-price-per-night">
-    </div>
+    <article class="search-tools">
+      <div class="filter-products">
+        <label for="serch-products-form__minimum-price-per-night">Price</label>
+        <input style="width: 70px;" type="number" name="minimum_price_per_night" placeholder="Minimum Cost"
+          id="serch-products-form__minimum-price-per-night">
+        <label for="serch-products-form__maximum-price-per-night">to</label>
+        <input style="width: 70px;" type="number" name="maximum_price_per_night" placeholder="Maximum Cost"
+          id="serch-products-form__maximum-price-per-night">
+      </div>
 
-    <div class="filter-products">
-      <label for="size">Size:</label>
-      <label for="size1">Post Card</label>
-      <input type="checkbox" id="size1">
-      <label for="size2">Letter</label>
-      <input type="checkbox" id="size2">
-      <label for="size3">Poster</label>
-      <input type="checkbox" id="size3">
-    </div>
+      <div class="filter-products">
+        <label for="size">Size:</label>
+        <label for="size1">Post Card</label>
+        <input type="checkbox" id="size1">
+        <label for="size2">Letter</label>
+        <input type="checkbox" id="size2">
+        <label for="size3">Poster</label>
+        <input type="checkbox" id="size3">
+      </div>
 
-    <div class="filter-products">
-      <label for="search-available">Available</label>
-      <input type="checkbox">
-    </div>
+      <div class="filter-products">
+        <label for="search-available">Available</label>
+        <input type="checkbox">
+      </div>
 
-    <div class="filter-products">
-      <label for="favorites">Favorites</label>
-      <input type="checkbox">
-    </div>
+      <div class="filter-products">
+        <label for="favorites">Favorites</label>
+        <input type="checkbox">
+      </div>
 
-    <div class="filter-products">
-      <button>Search</button>
-    </div>
+      <div class="filter-products">
+        <button>Search</button>
+      </div>
 
-    </div>
+      </div>
   </section>
 
+  </article>
   <section class="featured">
+    <!-- start of card  -->
     <article>
       <div><img src="./img/sufi09.png" class='size' /></div>
       <div class="desc">
@@ -75,6 +81,7 @@
         <a href="">Buy Now</a>
       </div>
     </article>
+    <!-- end of card -->
     <article>
       <div><img src="./img/mood01.png" class="size" /></div>
       <div class="desc">
@@ -127,6 +134,14 @@
     </article>
 
   </section>
+
+  <script>
+    $(document).ready(function() {
+      $('#btn-toggle').click(function() {
+        $('.search').toggle();
+      });
+
+    })</script>
 </body>
 
 </html>

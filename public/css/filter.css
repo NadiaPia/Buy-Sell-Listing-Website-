@@ -1,5 +1,5 @@
 .search {
-  display: flex;
+  display: none;
   justify-content: space-evenly;
 }
 
@@ -27,4 +27,9 @@ img {
   font-weight: 600;
   font-size: large;
   color: black;
+}
+
+.search-tools {
+  display: flex;
+  justify-content: space-evenly;
 }
