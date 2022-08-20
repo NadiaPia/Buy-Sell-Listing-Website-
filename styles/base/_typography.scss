@@ -60,6 +60,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5rem;
+  flex-shrink: 0;
 
   .flex-paragraph {
     display: flex;
@@ -70,6 +71,10 @@ body {
     .paragraph {
       margin: 0 10rem 0 10rem;
     }
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
   }
 }
 

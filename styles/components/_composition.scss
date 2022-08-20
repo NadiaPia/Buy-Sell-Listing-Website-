@@ -1,5 +1,6 @@
 .composition {
   position: relative;
+  margin-bottom: 10rem;
 
   &__photo {
     width: 55%;
@@ -14,6 +15,7 @@
       float: left;
       position: relative;
       width: 33.33333333%;
+
       box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
     }
 
@@ -89,5 +91,9 @@
 
   &:hover &__photo:not(:hover) {
     transform: scale(0.95);
+  }
+
+  @include respond(tab-port) {
+    margin-right: 2rem;
   }
 }
