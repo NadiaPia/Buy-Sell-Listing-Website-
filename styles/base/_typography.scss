@@ -57,7 +57,8 @@ body {
 }
 
 .paragraph-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
   justify-content: space-between;
   margin-bottom: 5rem;
   flex-shrink: 0;
