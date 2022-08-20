@@ -23,10 +23,12 @@ body {
     font-weight: 400;
     letter-spacing: 3.5rem;
 
+    .ai {
+      transition: 1s ease-in-out;
+    }
     .ai:hover {
       font-size: 12rem;
       color: black;
-      transition: 1s ease-in-out;
     }
 
     animation-name: moveInLeft;
@@ -224,6 +226,96 @@ body {
 }
 
 .buyers-heading-secondary {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  &:hover {
+    transform: skewX(5deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.5);
+  }
+}
+
+.heading-tertiary {
+  font-size: var(--default-font-size);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: var(--default-font-size);
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+.login-heading-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-white);
+  text-transform: uppercase;
+  padding-left: 1rem;
+
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: flex;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    margin-left: 2rem;
+    padding-top: 1rem;
+    padding-left: 3rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-family: 5rem;
+    }
+  }
+
+  &--sub {
+    display: flex;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    padding-top: 5rem;
+    padding-left: 4rem;
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+
+.login-heading-secondary {
   font-size: 3.2rem;
   text-transform: uppercase;
   font-weight: 700;

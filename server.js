@@ -62,7 +62,6 @@ app.use('/api', apiRouter);
 // Separate them into separate routes files (see above).
 // -----------------------------------------------------------
 app.get("/", (req, res) => {
-  console.log('sending index page');
   res.render("index");
 });
 app.get('/login', (req, res) => {

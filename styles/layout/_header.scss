@@ -1,3 +1,4 @@
+// LANDING PAGE HEADER------------------------------------
 .header {
   height: 95vh;
   object-fit: fill;
@@ -67,7 +68,7 @@
     }
   }
 }
-
+// SELLERS HEADER ---------------------------------------
 .sellers-header {
   height: 95vh;
   object-fit: fill;
@@ -82,8 +83,8 @@
   position: relative;
 
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
     height: 95vh;
   }
 
@@ -98,13 +99,17 @@
       url("../img/city_background.png");
   }
   @include respond(phone) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
   }
 
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+  }
   &__logo {
     height: 5.5rem;
-    margin: 5rem 0 0 5rem;
+    margin-top: 5rem;
   }
 
   &__text-box {
@@ -120,7 +125,7 @@
     }
   }
 }
-
+// BUYERS HEADER--------------------------------------
 .buyers-header {
   height: 95vh;
   object-fit: fill;
@@ -135,8 +140,8 @@
   position: relative;
 
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
     height: 95vh;
   }
 
@@ -151,13 +156,17 @@
       url("../img/city_background.png");
   }
   @include respond(phone) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
   }
 
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+  }
   &__logo {
     height: 5.5rem;
-    margin: 5rem 0 0 5rem;
+    margin-top: 5rem;
   }
 
   &__text-box {
@@ -171,5 +180,75 @@
     .buyers-btn {
       margin: 1rem 0;
     }
+  }
+}
+// LOGIN HEADER---------------------------------------
+.login-header {
+  height: 95vh;
+  object-fit: fill;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 160, 113, 0.803),
+      rgba(208, 102, 49, 0.803)
+    ),
+    url("../img/abstract01.png");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
+    clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
+    height: 95vh;
+  }
+
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 160, 113, 0.8),
+        rgba(208, 102, 49, 0.8)
+      ),
+      url("../img/abstract01.png");
+  }
+  @include respond(phone) {
+    -webkit-clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
+    clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
+
+    .login-seller-btn {
+      margin-right: 4rem;
+    }
+
+    .login-buyer-btn {
+      margin-left: 4rem;
+    }
+
+    .login-heading-primary--main {
+      padding-left: 4px;
+    }
+
+    .login-header__logo {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+  }
+  &__logo {
+    height: 5.5rem;
+    margin-left: 3rem;
+    margin-top: 25rem;
+  }
+
+  &__text-box {
+    height: 20vh;
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }
