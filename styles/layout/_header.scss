@@ -83,8 +83,15 @@
   position: relative;
 
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    -webkit-clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 35%,
+      80% 100%,
+      20% 100%,
+      0 35%
+    );
+    clip-path: polygon(25% 0%, 75% 0%, 100% 35%, 80% 100%, 20% 100%, 0 35%);
     height: 95vh;
   }
 
@@ -99,8 +106,16 @@
       url("../img/city_background.png");
   }
   @include respond(phone) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    -webkit-clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 35%,
+      80% 100%,
+      20% 100%,
+      0 35%
+    );
+    clip-path: polygon(25% 0%, 75% 0%, 100% 35%, 80% 100%, 20% 100%, 0 35%);
+    height: 95vh;
   }
 
   &__logo-box {
@@ -140,8 +155,15 @@
   position: relative;
 
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 35%,
+      80% 100%,
+      20% 100%,
+      0 35%
+    );
+    clip-path: polygon(25% 0%, 75% 0%, 100% 35%, 80% 100%, 20% 100%, 0 35%);
     height: 95vh;
   }
 
@@ -156,8 +178,16 @@
       url("../img/city_background.png");
   }
   @include respond(phone) {
-    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 35%,
+      80% 100%,
+      20% 100%,
+      0 35%
+    );
+    clip-path: polygon(25% 0%, 75% 0%, 100% 35%, 80% 100%, 20% 100%, 0 35%);
+    height: 95vh;
   }
 
   &__logo-box {
@@ -215,7 +245,7 @@
   @include respond(phone) {
     -webkit-clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
     clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
-
+    height: 95vh;
     .login-seller-btn {
       margin-right: 4rem;
     }
