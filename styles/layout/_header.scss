@@ -106,7 +106,13 @@
       ),
       url("../img/city_background.png");
   }
+
+  @include respond(tab-port) {
+    margin: 0rem 2rem 0 6.5rem;
+  }
   @include respond(phone) {
+    margin-left: 1rem;
+    margin-right: 1rem;
     -webkit-clip-path: polygon(
       25% 0%,
       75% 0%,

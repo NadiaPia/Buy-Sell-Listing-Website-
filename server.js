@@ -1,7 +1,7 @@
 // load .env data into process.env // load the .env!
 require("dotenv").config();
 const database = require('./database');
-
+const featured = require('./routes/sellers')
 // Web server config
 const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");

@@ -19,4 +19,4 @@ const getIsSold = function(isSold) {
       console.log(err.message);
     });
 }
-exports.getIsSold = getIsSold;
+exports.module = { getIsSold, };

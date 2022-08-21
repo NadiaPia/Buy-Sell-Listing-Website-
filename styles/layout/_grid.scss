@@ -39,6 +39,16 @@
   flex-grow: 1;
 }
 
+.ai-card__desc-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  justify-content: space-around;
+  align-content: center;
+  gap: 2rem;
+  margin-left: 2.5rem;
+}
+
 .section-featured {
   margin: 0 4rem 0 9.5rem;
   display: grid;
