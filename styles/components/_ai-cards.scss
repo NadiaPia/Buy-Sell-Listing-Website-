@@ -1,10 +1,27 @@
 .ai-card__img {
-  height: 45rem;
+  height: 40rem;
   background: transparent no-repeat;
   background-size: cover;
   border-radius: 0.4rem;
+  transition: 1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.5) translateY(-0.5rem);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+    z-index: 20;
+  }
+
+  &:hover .aicard_img:not(:hover) {
+    transform: scale(0.95);
+  }
 
   @include respond(phone) {
     margin-left: 1.5rem;
+
+    &:hover {
+      transform: scale(1.25) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.65);
+      z-index: 20;
+    }
   }
 }
