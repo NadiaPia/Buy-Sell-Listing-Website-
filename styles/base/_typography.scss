@@ -133,9 +133,16 @@ body {
     animation-duration: 1s;
     animation-timing-function: ease-out;
 
+    @include respond(tab-port) {
+      letter-spacing: 2rem;
+      font-size: 5rem;
+      padding-left: 0.5rem;
+    }
+
     @include respond(phone) {
       letter-spacing: 1rem;
-      font-family: 5rem;
+      font-size: 3.75rem;
+      padding-left: 0;
     }
   }
 
@@ -364,4 +371,11 @@ body {
   &:not(:last-child) {
     margin-bottom: 3rem;
   }
+}
+
+// card title h3 styling
+
+.ai-card__h3 {
+  display: flex;
+  justify-content: center;
 }

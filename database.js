@@ -44,3 +44,4 @@ const getBuyersProducts = function() {
   
 }
 exports.getBuyersProducts = getBuyersProducts;
+exports.module = { getIsSold, };
