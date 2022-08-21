@@ -9,7 +9,6 @@ create table products (
   description VARCHAR(255) NOT NULL,
   prompts VARCHAR(255) NOT NULL,
   price INT NOT NULL,
-  favorite BOOLEAN DEFAULT false,
   featured BOOLEAN DEFAULT false,
 	sold BOOLEAN DEFAULT false
 );
