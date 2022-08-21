@@ -1,5 +1,6 @@
 .ai-card__img {
   height: 40rem;
+  max-width: 35rem;
   background: transparent no-repeat;
   background-size: cover;
   border-radius: 0.4rem;
@@ -7,19 +8,25 @@
 
   &:hover {
     transform: scale(1.5) translateY(-0.5rem);
+    margin: 0 5rem 0 5rem;
     box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-    z-index: 20;
+    z-index: 25;
   }
 
-  &:hover .aicard_img:not(:hover) {
-    transform: scale(0.95);
+  @include respond(tab-port) {
+    margin-left: 1.5rem;
+    &:hover {
+      margin-right: 3rem;
+      transform: scale(1.35);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.65);
+      z-index: 20;
+    }
   }
-
   @include respond(phone) {
     margin-left: 1.5rem;
-
     &:hover {
-      transform: scale(1.25) translateY(-0.5rem);
+      margin-right: 3rem;
+      transform: scale(1.25);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.65);
       z-index: 20;
     }
