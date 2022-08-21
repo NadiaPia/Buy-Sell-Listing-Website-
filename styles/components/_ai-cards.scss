@@ -1,0 +1,10 @@
+.ai-card__img {
+  height: 45rem;
+  background: transparent no-repeat;
+  background-size: cover;
+  border-radius: 0.4rem;
+
+  @include respond(phone) {
+    margin-left: 1.5rem;
+  }
+}

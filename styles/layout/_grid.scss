@@ -39,6 +39,73 @@
   flex-grow: 1;
 }
 
+.section-featured {
+  margin: 0 4rem 0 9.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  gap: 2rem;
+
+  @include respond(tab-land) {
+    margin: 0 4rem 0 4rem;
+    grid-template-columns: repeat(2, 2fr);
+    grid-auto-rows: 1fr;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  @include respond(phone) {
+    margin-left: 4rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+}
+.section-favorites {
+  margin-left: 6.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  gap: 2rem;
+
+  @include respond(tab-land) {
+    margin: 0 4rem 0 4rem;
+    grid-template-columns: repeat(2, 2fr);
+    grid-auto-rows: 1fr;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  @include respond(phone) {
+    margin-left: 4rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+}
+.section-sell-art {
+  margin-left: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  gap: 2rem;
+
+  @include respond(tab-land) {
+    margin: 0 4rem 0 4rem;
+    grid-template-columns: repeat(2, 2fr);
+    grid-auto-rows: 1fr;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  @include respond(phone) {
+    margin-left: 4rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+}
+
 // spinning card grid grid
 
 .row {
