@@ -8,9 +8,9 @@ create table products (
 	seller_id INT REFERENCES users(id) ON DELETE CASCADE,
   description VARCHAR(255) NOT NULL,
   prompts VARCHAR(255) NOT NULL,
-  post_card BOOLEAN NOT NULL,
-  letter BOOLEAN NOT NULL,
-  poster BOOLEAN NOT NULL,
+  price INT NOT NULL,
+  favorite BOOLEAN DEFAULT false,
+  featured BOOLEAN DEFAULT false,
 	sold BOOLEAN DEFAULT false
 );
 

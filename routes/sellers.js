@@ -4,6 +4,4 @@ const db = require('../database')
 // .then get all data and then save data into template vars
 // .res.render the page
 // in sellers.ejs we needa loop to post all the dynamic data we get from the db
-const templateVars = {
-  db.getFeatured(res)
-}
+
