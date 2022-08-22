@@ -16,6 +16,15 @@ const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect();
 
+db.query('SELECT * FROM users;')
+  .then(result => {
+    console.log(result.rows);
+  })
+  .catch(error => {
+    console.log(error.message);
+  })
+
+
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -84,6 +93,10 @@ app.get('/contact', (req, res) => {
 app.get('/search', (req, res) => {
   res.render('search');
 })
+
+
+
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
