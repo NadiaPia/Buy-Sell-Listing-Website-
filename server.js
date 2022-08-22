@@ -1,6 +1,5 @@
 // load .env data into process.env // load the .env!
 require("dotenv").config();
-const database = require('./database');
 // Web server config
 const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");
@@ -53,9 +52,9 @@ app.use('/login', loginRoute(db));
 
 /*Nadia starst----------------------------------------------------------------------------*/
 
-const apiRouter = express.Router();
-apiRoutes(apiRouter, database);
-app.use('/api', apiRouter);
+// const apiRouter = express.Router();
+// apiRoutes(apiRouter, database);
+// app.use('/api', apiRouter);
 
 /*Nadia Finish------------------------------------------------------------------------------*/
 
