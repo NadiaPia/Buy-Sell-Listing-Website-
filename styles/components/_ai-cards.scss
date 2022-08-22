@@ -24,6 +24,7 @@
     z-index: 25;
   }
 
+
   @include respond(tab-port) {
     margin-left: 6rem;
     &:hover {
@@ -43,3 +44,14 @@
     }
   }
 }
+
+/*Nadia added heart grey start--------------------------------------------*/
+.ai-card__favorite {
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  svg {
+    fill: rgb(128, 128, 128);     
+  }
+}
+/*Nadia added heart grey finish--------------------------------------------*/

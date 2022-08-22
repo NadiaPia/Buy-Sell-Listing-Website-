@@ -43,10 +43,24 @@ const filterHide = () => {
   $(".slideFilter").css({display: 'none'})
 };
 
+const favoriteClicked = function() {
+  const isFavorite = $(this).children('svg').css("fill") === 'rgb(255, 0, 0)'
+  console.log($(this).children('svg').css("fill"))
+  $(this).children('svg').css({
+    fill: isFavorite ? 'grey' : 'red'
+  })
+}
+
+
+
 $(document).ready(() => {
   $(".filter").on("mouseover", filterShow )
   $(".filter").on("mouseleave", filterHide )
+  $(".ai-card__favorite").on("click", favoriteClicked )
+
 });
+
+
 
 
 

@@ -80,7 +80,12 @@ app.get('/sellers', (req, res) => {
   res.render('sellers');
 });
 app.get('/buyers', (req, res) => {
-  res.render('buyers');
+  database.getBuyersProducts()
+    .then(products => {
+      console.log(products);
+      const templateVars = { cards: products };
+      res.render('buyers', templateVars);
+    })
 });
 app.get('/contact', (req, res) => {
   res.render('contact');

@@ -12,4 +12,3 @@ insert into favorites (products_id, users_id) values (29,5);
 insert into favorites (products_id, users_id) values (30,6);
 
 
-
