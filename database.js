@@ -9,14 +9,7 @@ const pool = new Pool({
   database: process.env.DB_NAME
 });
 
-const getIsSold = function(isSold) {
-  return pool.query(`SELECT * FROM products
-  WHERE sold = $1;`, [isSold])
-    .then((result) => {
-      return result.rows;
-    })
-    .catch((err) => {
-      console.log(err.message);
-    });
-}
-exports.getIsSold = getIsSold;
+
+
+
+
