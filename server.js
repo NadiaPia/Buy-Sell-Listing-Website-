@@ -10,20 +10,12 @@ const app = express();
 const morgan = require("morgan");
 const apiRoutes = require('./apiRoutes'); /*Nadia----------------------------------------*/
 
+
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect();
-
-db.query('SELECT * FROM users;')
-  .then(result => {
-    console.log(result.rows);
-  })
-  .catch(error => {
-    console.log(error.message);
-  })
-
 
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -76,13 +68,17 @@ app.get("/", (req, res) => {
 app.get('/login', (req, res) => {
   res.render('login');
 })
-app.get('/sellers', (req, res) => {
-  res.render('sellers');
-});
+app.get('/sellers/:id', (req, res) => {
+  database.getProductsSoldBYSellerID(req.params.id)
+    .then(products => {
+      console.log(products);
+      const templateVars = { cards: products }
+      res.render('sellers', templateVars);
+    })
+})
 app.get('/buyers', (req, res) => {
   database.getBuyersProducts()
     .then(products => {
-      console.log(products);
       const templateVars = { cards: products };
       res.render('buyers', templateVars);
     })
@@ -90,15 +86,10 @@ app.get('/buyers', (req, res) => {
 app.get('/contact', (req, res) => {
   res.render('contact');
 })
-// -------------------------------------------------------------
-
-// Daniel's section
-// maybe a page for filtering results?
 
 app.get('/search', (req, res) => {
   res.render('search');
 })
-
 
 
 

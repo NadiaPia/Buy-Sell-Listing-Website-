@@ -44,4 +44,18 @@ const getBuyersProducts = function() {
 
 }
 exports.getBuyersProducts = getBuyersProducts;
+
+const getProductsSoldBYSellerID = function(id) {
+  return pool.query('SELECT * from products WHERE seller_id = $1;', [id])
+    .then((result) => {
+      return result.rows;
+    })
+    .catch((error) => {
+      console.log(error.message);
+    })
+}
+
+exports.getProductsSoldBYSellerID = getProductsSoldBYSellerID;
+
+
 exports.module = { getIsSold, };
