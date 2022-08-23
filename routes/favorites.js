@@ -12,7 +12,7 @@ module.exports = (db) => {
     WHERE favorites.users_id = 1;
               `)
       .then((result) => { //result is what db returns
-        console.log('result is what db returns', result.rows )
+        //console.log('result is what db returns', result.rows )
         return result.rows; //result.rows looks like: 
         /* {
     id: 12,
@@ -36,7 +36,7 @@ module.exports = (db) => {
         console.log(err.message);
       })
       .then(products => { //result.rows now called products and passes to this function as an argument
-        console.log('products from favorites', products)
+        //console.log('products from favorites', products)
         const templateVars = { cards: products};
         res.render('buyers_favorites', templateVars)
       })
@@ -81,7 +81,7 @@ module.exports = (db) => {
       })
 
   });
-  console.log("routerrrrrrrrrrrrrrrrrrrrrr", router)
+  //console.log("routerrrrrrrrrrrrrrrrrrrrrr", router)
   return router;
 
 };
