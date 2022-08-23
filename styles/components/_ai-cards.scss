@@ -5,7 +5,7 @@
   margin: 0 0 2rem 1rem;
 
   &__h3 {
-    margin-right: 3rem;
+    margin-right: 2rem;
   }
 }
 
@@ -23,7 +23,6 @@
     box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
     z-index: 25;
   }
-
 
   @include respond(tab-port) {
     margin-left: 6rem;
@@ -47,11 +46,6 @@
 
 /*Nadia added heart grey start--------------------------------------------*/
 .ai-card__favorite {
-  width: 30px;
-  height: 30px;
-  font-size: 1rem;
-  svg {
-    fill: rgb(128, 128, 128);     
-  }
+  font-size: 3rem;
 }
 /*Nadia added heart grey finish--------------------------------------------*/

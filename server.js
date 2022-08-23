@@ -50,14 +50,6 @@ app.use('/sellers', sellersRoutes(db));
 app.use('/login', loginRoute(db));
 // /api/endpoints
 
-/*Nadia starst----------------------------------------------------------------------------*/
-
-// const apiRouter = express.Router();
-// apiRoutes(apiRouter, database);
-// app.use('/api', apiRouter);
-
-/*Nadia Finish------------------------------------------------------------------------------*/
-
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -78,12 +70,7 @@ app.get('/contact', (req, res) => {
 })
 // -------------------------------------------------------------
 
-// Daniel's section
-// maybe a page for filtering results?
 
-// app.get('/search', (req, res) => {
-//   res.render('search');
-// })
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
