@@ -1,7 +1,5 @@
 // load .env data into process.env // load the .env!
 require("dotenv").config();
-const database = require('./database');
-const featured = require('./routes/sellers')
 // Web server config
 const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");
@@ -43,8 +41,9 @@ app.use(express.static("public"));
 
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
-
-
+const buyersRoutes = require("./routes/buyers");
+const sellersRoutes = require("./routes/sellers");
+const loginRoute = require("./routes/login");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 
@@ -52,7 +51,9 @@ const widgetsRoutes = require("./routes/widgets");
 
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-
+app.use('/buyers', buyersRoutes(db));
+app.use('/sellers', sellersRoutes(db));
+app.use('/login', loginRoute(db));
 // /api/endpoints
 
 /*Nadia starst----------------------------------------------------------------------------*/
@@ -69,22 +70,13 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 // -----------------------------------------------------------
+
+
+// const routes = require('./routes/acclaimRoutes.js')
+// app.use('/', routes);
+
 app.get("/", (req, res) => {
   res.render("index");
-});
-app.get('/login', (req, res) => {
-  res.render('login');
-})
-app.get('/sellers', (req, res) => {
-  res.render('sellers');
-});
-app.get('/buyers', (req, res) => {
-  database.getBuyersProducts()
-    .then(products => {
-      //console.log(products);
-      const templateVars = { cards: products };
-      res.render('buyers', templateVars);
-    })
 });
 app.get('/contact', (req, res) => {
   res.render('contact');
@@ -105,9 +97,9 @@ app.post('/favorites', (req, res) => {
 // Daniel's section
 // maybe a page for filtering results?
 
-app.get('/search', (req, res) => {
-  res.render('search');
-})
+// app.get('/search', (req, res) => {
+//   res.render('search');
+// })
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
