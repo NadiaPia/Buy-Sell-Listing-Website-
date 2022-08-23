@@ -290,3 +290,87 @@
     text-align: center;
   }
 }
+
+.contact-header {
+  height: 95vh;
+  object-fit: fill;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 160, 113, 0.803),
+      rgba(208, 102, 49, 0.803)
+    ),
+    url("../img/abstract01.png");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
+    clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
+    height: 95vh;
+  }
+
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 160, 113, 0.8),
+        rgba(208, 102, 49, 0.8)
+      ),
+      url("../img/abstract01.png");
+  }
+  @include respond(phone) {
+    -webkit-clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
+    clip-path: polygon(25% 0, 51% 25%, 75% 0, 100% 50%, 52% 81%, 0 50%);
+    height: 95vh;
+
+    .contact-heading-primary--main {
+      padding-left: 4px;
+    }
+
+    .contact-header__logo {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+  }
+  &__logo {
+    height: 5.5rem;
+    margin-left: 3rem;
+    margin-top: 25rem;
+  }
+
+  &__text-box {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: [labels] auto [controls] 1fr;
+  grid-auto-flow: row;
+  grid-gap: 0.8em;
+  background: #eee;
+  padding: 1.2em;
+}
+.contact-form > label {
+  grid-column: labels;
+  grid-row: auto;
+}
+.contact-form > input,
+.contact-form > textarea,
+.contact-form > button {
+  grid-column: controls;
+  grid-row: auto;
+  border: none;
+  padding: 1em;
+}

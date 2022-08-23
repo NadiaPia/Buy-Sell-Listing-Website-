@@ -4,7 +4,68 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/icon_font.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8caf2b2a17.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Contact Seller</title>
   </head>
-  <body></body>
+  <body>
+    <!-- header -->
+    <main class="contact-main__container">
+      <header class="contact-header">
+        <div class="contact-header__logo-box">
+          <img
+            src="../img/artificial-intelligence-icon-png-14762.png"
+            alt="site logo"
+            class="contact-header__logo"
+          />
+        </div>
+        <div class="contact-header__text-box">
+          <h1 class="contact-heading-primary">
+            <span class="contact-heading-primary--main">Contact Seller</span>
+            <span class="contact-heading-primary--sub"
+              >make first contact!</span
+            >
+          </h1>
+          <form
+            action="https://formsubmit.co/your@email.com"
+            method="POST"
+            class="contact-form"
+          >
+            <input
+              type="text"
+              name="_subject"
+              value="Asking about <art name>"
+            />
+            <input
+              type="text"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+            <input type="hidden" name="_next" value="/buyers" />
+            <input type="hidden" name="_subject" value="New submission!" />
+            <input
+              type="text"
+              name="name"
+              placeholder="Message here"
+              required
+            />
+
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </header>
+    </main>
+    <!-- end of header -->
+  </body>
 </html>
