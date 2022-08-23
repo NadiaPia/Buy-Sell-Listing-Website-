@@ -43,5 +43,22 @@ const getBuyersProducts = function() {
   });
   
 }
+
+
 exports.getBuyersProducts = getBuyersProducts;
+/*-------------------Nadia start----------------------------------*/
+const fillFavoritesTable = function(favorites) {
+  const values = [
+    favorites.products_id,
+    favorites.users_id
+  ];
+ 
+  let queryString = `INSERT INTO favorites(products_id, users_id) 
+  VALUES ($1, $2) RETURNING *;`;
+  return pool
+    .query(queryString, values).then((res) => res.rows);  
+}
+exports.fillFavoritesTable = fillFavoritesTable;
+/*-------------------Nadia finish----------------------------------*/
+
 exports.module = { getIsSold, };

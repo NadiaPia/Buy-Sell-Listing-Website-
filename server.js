@@ -38,20 +38,28 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
+//const buyersRoutes = require("./routes/buyers"); /*----------Nadia-------------------------------*/
+
+
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
+
+//app.use("/buyers", buyersRoutes(db)); /*----------Nadia-------------------------------*/
+
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+
 // /api/endpoints
 
 /*Nadia starst----------------------------------------------------------------------------*/
 
-const apiRouter = express.Router();
-apiRoutes(apiRouter, database);
-app.use('/api', apiRouter);
+// const apiRouter = express.Router();
+// apiRoutes(apiRouter, database);
+// app.use('/api', apiRouter);
 
 /*Nadia Finish------------------------------------------------------------------------------*/
 
@@ -73,7 +81,7 @@ app.get('/sellers', (req, res) => {
 app.get('/buyers', (req, res) => {
   database.getBuyersProducts()
     .then(products => {
-      console.log(products);
+      //console.log(products);
       const templateVars = { cards: products };
       res.render('buyers', templateVars);
     })
@@ -81,7 +89,18 @@ app.get('/buyers', (req, res) => {
 app.get('/contact', (req, res) => {
   res.render('contact');
 })
-// -------------------------------------------------------------
+
+
+/*Nadia start--------------------------------------------------*/ 
+app.post('/favorites', (req, res) => {
+  //console.log(req.body)
+  database.fillFavoritesTable(req.body)
+    .then(result => {
+      
+      res.json(result);
+    })
+});
+/*Nadia finish--------------------------------------------------*/ 
 
 // Daniel's section
 // maybe a page for filtering results?

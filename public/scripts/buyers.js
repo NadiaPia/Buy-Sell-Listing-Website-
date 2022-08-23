@@ -44,11 +44,19 @@ const filterHide = () => {
 };
 
 const favoriteClicked = function() {
-  const isFavorite = $(this).children('svg').css("fill") === 'rgb(255, 0, 0)'
-  console.log($(this).children('svg').css("fill"))
-  $(this).children('svg').css({
-    fill: isFavorite ? 'grey' : 'red'
+  const data = {users_id: 1, products_id: 6};
+
+  $.ajax("/favorites", { method: "POST", data})
+    .then((res) => {
+      console.log(res);
+      const isFavorite = $(this).children('svg').css("fill") === 'rgb(255, 0, 0)';
+          console.log($(this).children('svg').css("fill"));
+          $(this).children('svg').css({
+          fill: isFavorite ? 'grey' : 'red'
   })
+    });
+
+  
 }
 
 
