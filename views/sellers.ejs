@@ -64,14 +64,14 @@
             <div class="ai-card__sizes">
               <h4 class="ai-card-avail">availible in</h4>
               <div class="poster">
-                <div class="post-price"><%= cards.price%></div>
+                <div class="post-price"><%= feature.price%></div>
               </div>
               <div class="ai-card__favorite">
                 <i class="fa-solid fa-heart"></i>
               </div>
             </div>
             <button class="ai-card-btn btn btn--white">
-              <a href="#">Contact seller</a>
+              <a href="/contact/<%= feature.email%>">Contact seller</a>
             </button>
           </article>
 
@@ -108,7 +108,7 @@
               </div>
             </div>
             <button class="ai-card-btn btn btn--white">
-              <a href="#">Contact seller</a>
+              <a href="/contact/<%= card.email%>">Contact seller</a>
             </button>
           </article>
 
@@ -139,9 +139,7 @@
                 <i class="fa-solid fa-heart"></i>
               </div>
             </div>
-            <button class="ai-card-btn btn btn--white">
-              <a href="#">Contact seller</a>
-            </button>
+            <button class="ai-card-btn btn btn--white"></button>
           </article>
           <!-- end of card-->
         </section>

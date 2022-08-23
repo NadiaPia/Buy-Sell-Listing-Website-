@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/icon_font.css" />
-    <link rel="stylesheet" href="./styles/main.css" />
+    <link type="text/css" rel="stylesheet" href="../css/icon_font.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/main.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
       rel="stylesheet"
@@ -37,31 +37,19 @@
             >
           </h1>
           <form
-            action="https://formsubmit.co/your@email.com"
+            action="/contact/<%= card_id%>"
             method="POST"
             class="contact-form"
+            enctype="text/plain"
           >
-            <input
-              type="text"
-              name="_subject"
-              value="Asking about <art name>"
-            />
-            <input
-              type="text"
-              name="email"
-              placeholder="Email Address"
-              required
-            />
-            <input type="hidden" name="_next" value="/buyers" />
-            <input type="hidden" name="_subject" value="New submission!" />
-            <input
-              type="text"
-              name="name"
-              placeholder="Message here"
-              required
-            />
-
-            <button type="submit">Send</button>
+            Name:<br />
+            <input type="text" name="name" /><br />
+            E-mail:<br />
+            <input type="text" name="mail" /><br />
+            Subject:<br />
+            <input type="text" name="subject" size="50" /><br /><br />
+            <input type="submit" value="Send" />
+            <input type="reset" value="Reset" />
           </form>
         </div>
       </header>
