@@ -45,15 +45,16 @@ const filterHide = () => {
 
 const favoriteClicked = function() {
   const data = {users_id: 1, products_id: 6};
-  const isFavorite = $(this).children('svg').css("fill") === 'rgb(255, 0, 0)';
+  const isFavorite = $(this).children('i').css("color") === 'rgb(255, 0, 0)';
   
   const addFavorite = function(heartIcon) {
+    console.log(heartIcon)
     $.ajax("/buyers/favorites", { method: "POST", data})
       .then((res) => {
         console.log("resnse res",res); //console.log:  [{products_id: 6, users_id: 1}]        
         console.log('coloring',$(this).children('svg').css("fill")); //console.log: rgb(128, 128, 128)
-          heartIcon.children('svg').css({
-          fill: 'red'
+          heartIcon.children('i').css({
+          color: 'red'
           })
       });
   }
@@ -63,8 +64,8 @@ const favoriteClicked = function() {
       .then((res) => {
         console.log("response res",res); //console.log:  [{products_id: 6, users_id: 1}]        
         console.log('coloring',$(this).children('svg').css("fill")); //console.log: rgb(128, 128, 128)
-          heartIcon.children('svg').css({
-          fill: 'grey'
+          heartIcon.children('i').css({
+          color: 'grey'
           })
       });
   }

@@ -3,6 +3,9 @@ const router = express.Router();
 
 
 module.exports = (db) => {
+  //router.get('/', (req, res) => {
+    //res.render('buyers_favorites');
+  //})
   router.post('/', (req, res) => { //when we receive post request on /buyers/favorites/, do the callback
     const values = [
       req.body.products_id,
