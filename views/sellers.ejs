@@ -39,9 +39,28 @@
         <section class="section-featured">
           <!-- start of card -->
           <% for(let feature of featured) { %>
+<<<<<<< HEAD
             <article class="ai-card">
               <div class="ai-card__img-box">
                 <img src="<%= feature.photo %>" class="ai-card__img" alt="dhjdhdhjdjd" />
+=======
+          <article class="ai-card">
+            <div class="ai-card__img-box">
+              <img
+                src="<%= feature.photo %>"
+                class="ai-card__img"
+                alt="dhjdhdhjdjd"
+              />
+            </div>
+            <div class="ai-card__desc-box">
+              <p class="ai-card__p"><%= feature.name %></p>
+              <span class="artist"><%= feature.user_name %></span>
+            </div>
+            <div class="ai-card__sizes">
+              <h4 class="ai-card-avail">availible in</h4>
+              <div class="poster">
+                <div class="post-price"><%= feature.price%></div>
+>>>>>>> 3da4df02df6d8448c43a946813f7a815f7a1fca0
               </div>
               <div class="ai-card__desc-box">
                 <p class="ai-card__p">
@@ -51,6 +70,7 @@
                   <%= feature.user_name %>
                 </span>
               </div>
+<<<<<<< HEAD
               <div class="ai-card__sizes">
                 <h4 class="ai-card-avail">availible in</h4>
                 <div class="poster">
@@ -68,6 +88,16 @@
             </article>
             <% } %>
               <!-- end of card-->
+=======
+            </div>
+            <button class="ai-card-btn btn btn--white">
+              <a href="/contact/<%= feature.email%>">Contact seller</a>
+            </button>
+          </article>
+
+          <% } %>
+          <!-- end of card-->
+>>>>>>> 3da4df02df6d8448c43a946813f7a815f7a1fca0
         </section>
         <!-- end of featured -->
         <div class="u-center-text u-margin-bottom-big">
@@ -89,6 +119,7 @@
                   <%= card.user_name %>
                 </span>
               </div>
+<<<<<<< HEAD
               <div class="ai-card__sizes">
                 <h4 class="ai-card-avail">availible in</h4>
                 <div class="poster">
@@ -104,6 +135,16 @@
             </article>
             <% } %>
               <!-- end of card-->
+=======
+            </div>
+            <button class="ai-card-btn btn btn--white">
+              <a href="/contact/<%= card.email%>">Contact seller</a>
+            </button>
+          </article>
+
+          <% } %>
+          <!-- end of card-->
+>>>>>>> 3da4df02df6d8448c43a946813f7a815f7a1fca0
         </section>
         <!-- end of of all -->
         <!-- start of sellers art -->
@@ -129,9 +170,7 @@
                 <i class="fa-solid fa-heart"></i>
               </div>
             </div>
-            <button class="ai-card-btn btn btn--white">
-              <a href="#">Contact seller</a>
-            </button>
+            <button class="ai-card-btn btn btn--white"></button>
           </article>
           <!-- end of card-->
         </section>
