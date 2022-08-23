@@ -45,21 +45,36 @@ const filterHide = () => {
 
 const favoriteClicked = function() {
   const data = {users_id: 1, products_id: 6};
-
-  $.ajax("/favorites", { method: "POST", data})
-    .then((res) => {
-      console.log(res);
-      const isFavorite = $(this).children('svg').css("fill") === 'rgb(255, 0, 0)';
-          console.log($(this).children('svg').css("fill"));
-          $(this).children('svg').css({
-          fill: isFavorite ? 'grey' : 'red'
-  })
-    });
-
+  const isFavorite = $(this).children('svg').css("fill") === 'rgb(255, 0, 0)';
   
+  const addFavorite = function(heartIcon) {
+    $.ajax("/buyers/favorites", { method: "POST", data})
+      .then((res) => {
+        console.log("resnse res",res); //console.log:  [{products_id: 6, users_id: 1}]        
+        console.log('coloring',$(this).children('svg').css("fill")); //console.log: rgb(128, 128, 128)
+          heartIcon.children('svg').css({
+          fill: 'red'
+          })
+      });
+  }
+
+  const deleteFavorite = function(heartIcon) {
+    $.ajax("/buyers/favorites", { method: "DELETE", data})
+      .then((res) => {
+        console.log("response res",res); //console.log:  [{products_id: 6, users_id: 1}]        
+        console.log('coloring',$(this).children('svg').css("fill")); //console.log: rgb(128, 128, 128)
+          heartIcon.children('svg').css({
+          fill: 'grey'
+          })
+      });
+  }
+  if (isFavorite) {
+    deleteFavorite($(this))
+  } else {
+    addFavorite($(this))
+  }
+
 }
-
-
 
 $(document).ready(() => {
   $(".filter").on("mouseover", filterShow )

@@ -44,6 +44,10 @@ const widgetsRoutes = require("./routes/widgets");
 const buyersRoutes = require("./routes/buyers");
 const sellersRoutes = require("./routes/sellers");
 const loginRoute = require("./routes/login");
+
+const buyersFavRoutes = require("./routes/favorites");
+
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 
@@ -54,6 +58,8 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use('/buyers', buyersRoutes(db));
 app.use('/sellers', sellersRoutes(db));
 app.use('/login', loginRoute(db));
+app.use('/buyers/favorites', buyersFavRoutes(db));
+
 // /api/endpoints
 
 /*Nadia starst----------------------------------------------------------------------------*/
@@ -86,7 +92,7 @@ app.get('/contact', (req, res) => {
 /*Nadia start--------------------------------------------------*/ 
 app.post('/favorites', (req, res) => {
   //console.log(req.body)
-  database.fillFavoritesTable(req.body)
+  db.fillFavoritesTable(req.body)
     .then(result => {
       
       res.json(result);
