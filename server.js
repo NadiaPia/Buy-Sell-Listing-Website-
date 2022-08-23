@@ -36,20 +36,38 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
+//const buyersRoutes = require("./routes/buyers"); /*----------Nadia-------------------------------*/
+
+
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const buyersRoutes = require("./routes/buyers");
 const sellersRoutes = require("./routes/sellers");
 const loginRoute = require("./routes/login");
+<<<<<<< HEAD
 const contactRoute = require("./routes/contact");
+=======
+
+const buyersFavRoutes = require("./routes/favorites");
+
+
+>>>>>>> master
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
+
+//app.use("/buyers", buyersRoutes(db)); /*----------Nadia-------------------------------*/
+
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use('/buyers', buyersRoutes(db));
 app.use('/sellers', sellersRoutes(db));
 app.use('/login', loginRoute(db));
+<<<<<<< HEAD
 app.use('/contact', contactRoute(db))
+=======
+app.use('/buyers/favorites', buyersFavRoutes(db));
+
+>>>>>>> master
 // /api/endpoints
 
 // Note: mount other resources here, using the same pattern above
@@ -67,10 +85,19 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get('/contact', (req, res) => {
-  res.render('contact');
-})
-// -------------------------------------------------------------
+
+
+
+/*Nadia start--------------------------------------------------*/
+app.post('/favorites', (req, res) => {
+  //console.log(req.body)
+  db.fillFavoritesTable(req.body)
+    .then(result => {
+
+      res.json(result);
+    })
+});
+/*Nadia finish--------------------------------------------------*/
 
 
 app.listen(PORT, () => {
