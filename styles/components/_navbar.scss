@@ -18,6 +18,7 @@
 
 .nav-item {
   width: 100%;
+  padding-bottom: 5rem;
 }
 
 .nav-item:last-child {
@@ -34,7 +35,6 @@
   position: absolute;
   right: 0;
   transform: translate(100%, -50%);
-  
 }
 
 @media only screen and (max-width: 600px) {
@@ -43,7 +43,6 @@
     transform: translate(25%, -100%);
   }
 }
-
 
 /* Nadia finish---------------------------------------------------------*/
 
@@ -56,7 +55,7 @@
   filter: grayscale(100%) opacity(0.7);
   transition: var(--transition-speed);
   // Nadia - trying to make icon sizes consistent while chamging screen size
-  // font-size: 2vw; 
+  // font-size: 2vw;
   width: 3vw;
 }
 

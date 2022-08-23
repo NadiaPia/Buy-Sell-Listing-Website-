@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Sell Your Art</title>
+    <title>Buy Art</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,29 +19,31 @@
     ></script>
   </head>
   <body>
-    <%- include('partials/_navbar') %>
-    <!-- start of header -->
-    <header class="sellers-header">
-      <div class="sellers-header__logo-box">
+    <%- include('partials/_navbarBuyers') %>
+    <!-- header -->
+    <header class="buyers-header">
+      <div class="buyers-header__logo-box">
         <img
           src="../img/artificial-intelligence-icon-png-14762.png"
           alt="site logo"
-          class="sellers-header__logo"
+          class="buyers-header__logo"
         />
       </div>
-      <div class="sellers-header__text-box">
-        <h1 class="sellers-heading-primary">
-          <span class="sellers-heading-primary--main">Broker your art</span>
-          <span class="sellers-heading-primary--sub">change the world</span>
+      <div class="buyers-header__text-box">
+        <h1 class="buyers-heading-primary">
+          <span class="buyers-heading-primary--main">Browse and Buy</span>
+          <span class="buyers-heading-primary--sub"
+            >discover your next conversation piece</span
+          >
         </h1>
-        <a href="#" class="sellers-btn btn btn--white btn--animated"
-          >Post your art</a
+        <a href="#" class="buyers-btn btn btn--white btn--animated"
+          >Discover Your Next masterpeice</a
         >
       </div>
     </header>
     <!-- end of header -->
     <main>
-      <section class="section-sellers-art">
+      <section class="section-buyers-art">
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="sellers-heading-secondary">our featured art</h2>
         </div>
@@ -116,37 +118,10 @@
           <!-- end of card-->
         </section>
         <!-- end of of all -->
-        <!-- start of sellers art -->
-        <div class="u-center-text u-margin-bottom-big">
-          <h2 class="sellers-heading-secondary">Your Art</h2>
+
+        <div class="u-center-text u-margin-bottom-huge">
+          <a href="#" class="btn btn--green">Discover more</a>
         </div>
-        <section class="section-sell-art">
-          <!-- start of card -->
-          <article class="ai-card">
-            <div class="ai-card__img-box">
-              <img src="" class="ai-card__img" alt="dhjdhdhjdjd" />
-            </div>
-            <div class="ai-card__desc-box">
-              <h3 class="ai-card__h3"></h3>
-              <span class="artist"></span>
-            </div>
-            <div class="ai-card__sizes">
-              <h4 class="ai-card-avail">availible in</h4>
-              <div class="poster">
-                <div class="post-price"></div>
-              </div>
-              <div class="ai-card__favorite">
-                <i class="fa-solid fa-heart"></i>
-              </div>
-            </div>
-            <button class="ai-card-btn btn btn--white">
-              <a href="#">Contact seller</a>
-            </button>
-          </article>
-          <!-- end of card-->
-        </section>
-        <!-- end of sellers art -->
-        <div class="u-center-text u-margin-bottom-huge"></div>
       </section>
     </main>
     <footer class="footer">

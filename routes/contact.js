@@ -14,11 +14,13 @@ module.exports = (db) => {
       })
       .then(products => {
         const features = products.filter(e => e.featured);
-        console.log(features);
         const templateVars = { cards: products, featured: features.slice(0, 3) };
-        res.render('sellers', templateVars)
+        res.render('contact', templateVars)
       })
   });
 
+  router.post('/'), (req, res) => {
+
+  }
   return router;
 };

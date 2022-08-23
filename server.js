@@ -1,14 +1,11 @@
 // load .env data into process.env // load the .env!
 require("dotenv").config();
-const database = require('./database');
-const featured = require('./routes/sellers')
 // Web server config
 const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const apiRoutes = require('./apiRoutes'); /*Nadia----------------------------------------*/
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -47,22 +44,30 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
+
+
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+const buyersRoutes = require("./routes/buyers");
+const sellersRoutes = require("./routes/sellers");
+const loginRoute = require("./routes/login");
+const contactRoute = require("./routes/contact");
+const buyersFavRoutes = require("./routes/favorites");
+
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
+
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-// /api/endpoints
+app.use('/buyers', buyersRoutes(db));
+app.use('/sellers', sellersRoutes(db));
+app.use('/login', loginRoute(db));
+app.use('/contact', contactRoute(db))
+app.use('/buyers/favorites', buyersFavRoutes(db));
 
-/*Nadia starst----------------------------------------------------------------------------*/
 
-const apiRouter = express.Router();
-apiRoutes(apiRouter, database);
-app.use('/api', apiRouter);
-
-/*Nadia Finish------------------------------------------------------------------------------*/
 
 // Note: mount other resources here, using the same pattern above
 
@@ -70,36 +75,22 @@ app.use('/api', apiRouter);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 // -----------------------------------------------------------
+
+
+
 app.get("/", (req, res) => {
   res.render("index");
 });
-app.get('/login', (req, res) => {
-  res.render('login');
-})
-app.get('/sellers', (req, res) => {
-  res.render('sellers');
-});
-app.get('/buyers', (req, res) => {
-  database.getBuyersProducts()
-    .then(products => {
-      console.log(products);
-      const templateVars = { cards: products };
-      res.render('buyers', templateVars);
-    })
-});
-app.get('/contact', (req, res) => {
-  res.render('contact');
-})
-// -------------------------------------------------------------
 
-// Daniel's section
-// maybe a page for filtering results?
 
+<<<<<<< HEAD
 app.get('/search', (req, res) => {
   res.render('search');
 })
 
 
+=======
+>>>>>>> 51a3e10dc449a91e568781f17d4eabda02c112d5
 
 
 app.listen(PORT, () => {
