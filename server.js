@@ -83,16 +83,6 @@ app.get("/", (req, res) => {
 });
 
 
-<<<<<<< HEAD
-app.get('/search', (req, res) => {
-  res.render('search');
-})
-
-
-=======
->>>>>>> 51a3e10dc449a91e568781f17d4eabda02c112d5
-
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
