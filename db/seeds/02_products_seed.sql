@@ -28,3 +28,4 @@ insert into products (name, photo, country, city, seller_id, description,prompts
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Dancing Stone', 'https://i.imgur.com/oeHD3P5.png', 'Canada', 'Golden',7,'','', 100,false, false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Upon the Water', 'https://i.imgur.com/ooOCGpD.png', 'Canada', 'Ajax',3,'','', 100,false, true);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Sacred Temple', 'https://i.imgur.com/CUOohbb.png', 'Canada', 'Port Moody',3,'','', 100, true, false);
+

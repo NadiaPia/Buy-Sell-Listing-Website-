@@ -7,20 +7,12 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect();
-
-db.query('SELECT * FROM users;')
-  .then(result => {
-    console.log(result.rows);
-  })
-  .catch(error => {
-    console.log(error.message);
-  })
-
 
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -48,6 +40,7 @@ app.use(express.static("public"));
 
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+<<<<<<< HEAD
 const buyersRoutes = require("./routes/buyers");
 const sellersRoutes = require("./routes/sellers");
 const loginRoute = require("./routes/login");
@@ -55,17 +48,27 @@ const contactRoute = require("./routes/contact");
 const buyersFavRoutes = require("./routes/favorites");
 
 
+=======
+const getBuyers = require("./routes/buyers")
+>>>>>>> daniel_1
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+<<<<<<< HEAD
 app.use('/buyers', buyersRoutes(db));
 app.use('/sellers', sellersRoutes(db));
 app.use('/login', loginRoute(db));
 app.use('/contact', contactRoute(db))
 app.use('/buyers/favorites', buyersFavRoutes(db));
+=======
+app.use("/buyers", getBuyers(db));
+// /api/endpoints
+
+/*Nadia starst----------------------------------------------------------------------------*/
+>>>>>>> daniel_1
 
 
 
@@ -75,13 +78,33 @@ app.use('/buyers/favorites', buyersFavRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 // -----------------------------------------------------------
+<<<<<<< HEAD
+=======
+app.get("/", (req, res) => {
+  res.render("index");
+});
+app.get('/login', (req, res) => {
+  res.render('login');
+})
+app.get('/sellers/:id', (req, res) => {
+  database.getProductsSoldBYSellerID(req.params.id)
+    .then(products => {
+      console.log(products);
+      const templateVars = { cards: products }
+      res.render('sellers', templateVars);
+    })
+})
+
+app.get('/contact', (req, res) => {
+  res.render('contact');
+})
+>>>>>>> daniel_1
 
 
 
 app.get("/", (req, res) => {
   res.render("index");
 });
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
