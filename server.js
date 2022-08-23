@@ -41,11 +41,13 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+const getBuyers = require("./routes/buyers")
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.use("/buyers", getBuyers(db));
 // /api/endpoints
 
 /*Nadia starst----------------------------------------------------------------------------*/
@@ -76,13 +78,7 @@ app.get('/sellers/:id', (req, res) => {
       res.render('sellers', templateVars);
     })
 })
-app.get('/buyers', (req, res) => {
-  database.getBuyersProducts()
-    .then(products => {
-      const templateVars = { cards: products };
-      res.render('buyers', templateVars);
-    })
-});
+
 app.get('/contact', (req, res) => {
   res.render('contact');
 })

@@ -1,4 +1,4 @@
-insert into products (name, photo, country, city, seller_id, description,prompts,price,featured,sold) values ('Crax sp.', 'https://imgur.com/GNVetZ4', 'Canada', 'Belfast',2,'','', 100,false, true);
+insert into products (name, photo, country, city, seller_id, description,prompts,price,featured,sold) values ('Crax sp.', 'https://imgur.com/GNVetZ4.png', 'Canada', 'Belfast',2,'','', 100,false, true);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Pelecans onocratalus', 'https://imgur.com/QGiXu5u', 'Canada', 'Oxbow',3,'','', 100,false, false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Varanus albigularis', 'https://imgur.com/Pjj3V04', 'Canada', 'Grande Cache',2,'','', 100,false, false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Ovis ammon', 'https://imgur.com/E8z407M', 'Canada', 'Baie-Saint-Paul',3,'','', 100,false, true);
