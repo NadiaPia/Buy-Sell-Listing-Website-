@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
+const { filterByCity } = require('../database');
+
+
 module.exports = (db) => {
   router.get('/', (req, res) => { //do query to db
     db.query(`SELECT products.*, users.email, users.user_name FROM products
               JOIN users ON users.id = seller_id
               LIMIT 12;`)
       .then((result) => { //result is what db returns
-        //console.log('result is what db returns', result.rows )
+        console.log('result is what db returns', result.rows )
         return result.rows; //result.rows looks like: 
         /* {
     id: 12,
@@ -51,8 +54,11 @@ module.exports = (db) => {
       })
   });
 
-  router.post('/'), (req, res) => {
-
-  }
+  router.post('/filter', (req, res) => {
+    const city = req.body.city;
+    filterByCity(city).then((data) => {
+      console.log(data);
+    })
+  })
   return router;
 };
