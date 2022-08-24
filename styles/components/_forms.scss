@@ -28,7 +28,11 @@ ul {
 }
 
 .company-info {
-  background: #c9e6ff;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(255, 160, 113, 0.803),
+    rgba(208, 102, 49, 0.803)
+  );
 }
 
 .company-info h3,
