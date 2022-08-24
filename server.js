@@ -47,6 +47,7 @@ const sellersRoutes = require("./routes/sellers");
 const loginRoute = require("./routes/login");
 const contactRoute = require("./routes/contact");
 const buyersFavRoutes = require("./routes/favorites");
+const searchRoute = require("./routes/search");
 
 
 
@@ -60,6 +61,7 @@ app.use('/sellers', sellersRoutes(db));
 app.use('/login', loginRoute(db));
 app.use('/contact', contactRoute(db))
 app.use('/buyers/favorites', buyersFavRoutes(db));
+app.use('/search', searchRoute(db));
 
 
 

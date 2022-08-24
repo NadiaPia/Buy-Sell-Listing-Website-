@@ -2,146 +2,74 @@
 <html lang="en">
 
 <head>
-  <title>Buy Art</title>
+  <title>Search Results</title>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/icon_font.css" />
   <link rel="stylesheet" href="./styles/main.css" />
-  <link rel="stylesheet" href="/css/filter.css" />
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
+  <script src="https://kit.fontawesome.com/8caf2b2a17.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header class="buyers-header">
-    <div class="buyers-header__logo-box">
-      <img src="../img/artificial-intelligence-icon-png-14762.png" alt="site logo" class="buyers-header__logo" />
-    </div>
-    <div class="buyers-header__text-box">
-      <h1 class="buyers-heading-primary">
-        <span class="buyers-heading-primary--main">Browse and Buy</span>
-        <span class="buyers-heading-primary--sub">discover your next conversation piece</span>
-      </h1>
-      <a href="#" class="buyers-btn btn btn--white btn--animated">Discover Your Next masterpeice</a>
-    </div>
-  </header>
-
-  <button id="btn-toggle">FILTER</button>
-
-  <section class="search">
-    <article class="search-tools">
-      <div class="filter-products">
-        <label for="serch-products-form__minimum-price-per-night">Price</label>
-        <input style="width: 70px;" type="number" name="minimum_price_per_night" placeholder="Minimum Cost"
-          id="serch-products-form__minimum-price-per-night">
-        <label for="serch-products-form__maximum-price-per-night">to</label>
-        <input style="width: 70px;" type="number" name="maximum_price_per_night" placeholder="Maximum Cost"
-          id="serch-products-form__maximum-price-per-night">
+  <%- include('partials/_navbarBuyers') %>
+    <!-- header -->
+    <header class="buyers-header">
+      <div class="buyers-header__logo-box">
+        <img src="../img/artificial-intelligence-icon-png-14762.png" alt="site logo" class="buyers-header__logo" />
       </div>
-
-      <div class="filter-products">
-        <label for="size">Size:</label>
-        <label for="size1">Post Card</label>
-        <input type="checkbox" id="size1">
-        <label for="size2">Letter</label>
-        <input type="checkbox" id="size2">
-        <label for="size3">Poster</label>
-        <input type="checkbox" id="size3">
-      </div>
-
-      <div class="filter-products">
-        <label for="search-available">Available</label>
-        <input type="checkbox">
-      </div>
-
-      <div class="filter-products">
-        <label for="favorites">Favorites</label>
-        <input type="checkbox">
-      </div>
-
-      <div class="filter-products">
-        <button>Search</button>
-      </div>
+      <div class="buyers-header__text-box">
+        <h1 class="buyers-heading-primary">
+          <span class="buyers-heading-primary--main">Browse and Buy</span>
+          <span class="buyers-heading-primary--sub">discover your next conversation piece</span>
+        </h1>
 
       </div>
-  </section>
+    </header>
+    <!-- end of header -->
+    <main>
+      <section class="section-sellers-art">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="sellers-heading-secondary">our featured art</h2>
+        </div>
+        <!-- start of featured -->
+        <section class="section-featured">
+          <!-- start of card -->
+          <% for(let product of products) { %>
+            <article class="ai-card">
+              <div class="ai-card__img-box">
+                <img src="<%= product.photo %>" class="ai-card__img" alt="dhjdhdhjdjd" />
+              </div>
+              <div class="ai-card__desc-box">
+                <p class="ai-card__p">
+                  <%= product.name %>
+                </p>
+                <span class="artist">
+                  <%= product.user_name %>
+                </span>
+                <span class="price">
+                  <%= product.price %>
+                </span>
+              </div>
+              <div class="ai-card__sizes">
+              </div>
+              <div class="ai-card__favorite" id="heart-<%= product.id%>">
+                <!--"heart-<%= product.id%>" is sows id of every card-->
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              </div>
+              <button class="ai-card-btn btn btn--white">
+                <a href="#">Contact seller</a>
+              </button>
+            </article>
 
-  </article>
-  <section class="featured">
-    <!-- start of card  -->
-    <article>
-      <div><img src="./img/sufi09.png" class='size' /></div>
-      <div class="desc">
-        <div>DIVE INTO THE WOODS</div>
-        <div>Price: $75, 85, 120</div>
-      </div>
-      <div class="desc">
-        <a href="">Buy Now</a>
-      </div>
-    </article>
-    <!-- end of card -->
-    <article>
-      <div><img src="./img/mood01.png" class="size" /></div>
-      <div class="desc">
-        <div>DIVE INTO THE WOODS</div>
-        <div>Price: $75, 85, 120</div>
-      </div>
-      <div class="desc">
-        <a href="">Buy Now</a>
-      </div>
-    </article>
-    <article>
-      <div> <img src="./img/cat03.png" class='size' /></div>
-      <div class="desc">
-        <div>DIVE INTO THE WOODS</div>
-        <div>Price: $75, 85, 120</div>
-      </div>
-      <div class="desc">
-        <a href="">Buy Now</a>
-      </div>
-    </article>
-    <article>
-      <div><img src="./img/purple.png" class='size' /></div>
-      <div class="desc">
-        <div>DIVE INTO THE WOODS</div>
-        <div>Price: $75, 85, 120</div>
-      </div>
-      <div class="desc">
-        <a href="">Buy Now</a>
-      </div>
-    </article>
-    <article>
-      <div><img src="./img/car1.png" class='size' /></div>
-      <div class="desc">
-        <div>DIVE INTO THE WOODS</div>
-        <div>Price: $75, 85, 120</div>
-      </div>
-      <div class="desc">
-        <a href="">Buy Now</a>
-      </div>
-    </article>
-    <article>
-      <div><img src="./img/outdoor3.png" class='size' /></div>
-      <div class="desc">
-        <div>DIVE INTO THE WOODS</div>
-        <div>Price: $75, 85, 120</div>
-      </div>
-      <div class="desc">
-        <a href="">Buy Now</a>
-      </div>
-    </article>
-
-  </section>
-
-  <script>
-    $(document).ready(function() {
-      $('#btn-toggle').click(function() {
-        $('.search').toggle();
-      });
-
-    })</script>
+            <% } %>
+              <!-- end of card-->
+              <p>&copy; <span id="date"></span> Acclaim. All rights reserved.</p>
+              </footer>
 </body>
 
 </html>
