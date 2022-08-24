@@ -21,7 +21,7 @@ module.exports = (db) => {
       .then(products => {
         const sellersArt = products.filter(e => e.seller_id === 2);
         const features = products.filter(e => e.featured);
-        const templateVars = { cards: products.slice(0, 12), featured: features.slice(0, 3), userArt: sellersArt };
+        const templateVars = { cards: products.slice(0, 21), featured: features.slice(0, 3), userArt: sellersArt };
         res.render('sellers', templateVars)
       })
   });

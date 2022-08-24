@@ -85,7 +85,7 @@
         <!-- start of All -->
         <section class="section-all">
           <!-- start of card -->
-          <% for(let card of cards) { %>
+          <% for(let card of cards) { %> <% if(card.seller_id != 2) { %>
           <!-- start of card -->
           <article class="ai-card">
             <div class="ai-card__img-box">
@@ -112,7 +112,7 @@
               <a href="/contact/<%= card.email%>">Contact seller</a>
             </button>
           </article>
-          <% } %>
+          <% } %> <% } %>
           <!-- end of card-->
         </section>
         <!-- end of of all -->

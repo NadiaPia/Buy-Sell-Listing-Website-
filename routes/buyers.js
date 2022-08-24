@@ -54,7 +54,7 @@ module.exports = (db) => {
       })
       .then(products => { //result.rows now called products and passes to this function as an argument
         const features = products.filter(e => e.featured); //do filtration of elements where "featured" = true
-        const templateVars = { cards: products.slice(0, 12), featured: features.slice(0, 3) };
+        const templateVars = { cards: products.slice(0, 20), featured: features.slice(0, 3) };
         res.render('buyers', templateVars)
       })
   });
