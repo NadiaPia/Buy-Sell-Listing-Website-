@@ -44,8 +44,11 @@ const filterHide = () => {
 };
 
 const favoriteClicked = function() {
-  const data = {users_id: 1, products_id: 6};
   const isFavorite = $(this).children('i').css("color") === 'rgb(255, 0, 0)';
+  //console.log($(this).attr("id")) //heart-12 
+  console.log($(this).attr("id").split("heart-").pop()) //12
+  const productId = $(this).attr("id").split("heart-").pop();
+  const data = {users_id: 1, products_id: productId};
   
   const addFavorite = function(heartIcon) {
     //console.log(heartIcon)

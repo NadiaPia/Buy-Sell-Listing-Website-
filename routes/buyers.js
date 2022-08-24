@@ -10,7 +10,7 @@ module.exports = (db) => {
               JOIN users ON users.id = seller_id
               LIMIT 12;`)
       .then((result) => { //result is what db returns
-        //console.log('result is what db returns', result.rows )
+        console.log('result is what db returns', result.rows )
         return result.rows; //result.rows looks like: 
         /* {
     id: 12,
