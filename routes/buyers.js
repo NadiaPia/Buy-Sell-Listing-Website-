@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { filterByCity } = require('../database');
+const { filterProducts } = require('../database');
 
 
 module.exports = (db) => {
@@ -16,8 +16,8 @@ module.exports = (db) => {
               JOIN users ON users.id = seller_id
               LIMIT 12;`)
       .then((result) => { //result is what db returns
-        console.log('result is what db returns', result.rows )
-        return result.rows; //result.rows looks like: 
+        console.log('result is what db returns', result.rows)
+        return result.rows; //result.rows looks like:
         /* {
     id: 12,
     name: 'Ivory Queen',
@@ -48,7 +48,7 @@ module.exports = (db) => {
     email: 'jhrinchishin2@1688.com',
     user_name: 'jaba-wookie'
   }, */
-        
+
       })
       .catch((err) => {
         console.log(err.message);
@@ -61,8 +61,11 @@ module.exports = (db) => {
   });
 
   router.post('/filter', (req, res) => {
+    const available = req.body.available;
     const city = req.body.city;
-    filterByCity(city).then((data) => {
+    const minprice = req.body.minprice;
+    const maxprice = req.body.maxprice;
+    filterProducts(city, minprice, maxprice, available).then((data) => {
       console.log(data);
     })
   })

@@ -4,9 +4,9 @@ const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect();
 
-const filterByCity = function(city) {
+const filterProducts = function(city, minprice, maxprice, available) {
   return db
-    .query('SELECT * from products WHERE city = $1;', [city])
+    .query('SELECT * FROM products WHERE city = $1 AND price BETWEEN $2 and $3 AND sold = $4;', [city, minprice, maxprice, available])
     .then((response) => {
       return response.rows;
     })
@@ -14,5 +14,4 @@ const filterByCity = function(city) {
       console.log(error.message);
     })
 }
-
-exports.filterByCity = filterByCity;
+exports.filterProducts = filterProducts;
