@@ -60,8 +60,11 @@ module.exports = (db) => {
   });
 
   router.post('/filter', (req, res) => {
+    function capitalFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
     const available = req.body.available;
-    const city = req.body.city;
+    const city = capitalFirstLetter(req.body.city);
     const minprice = req.body.minprice;
     const maxprice = req.body.maxprice;
     filterProducts(city, minprice, maxprice, available).then((data) => {
