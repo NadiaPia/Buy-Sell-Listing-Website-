@@ -3,6 +3,16 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 
 
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   host: 'smtp.gmail.com',
+//   auth: {
+//     user: process.env.EM_NAME,
+//     pass: process.env.EM_PW
+//   }
+// });
+
+
 module.exports = (db) => {
   router.get('/:email', (req, res) => {
     db.query(`SELECT products.*, users.email, users.user_name FROM products
@@ -21,29 +31,41 @@ module.exports = (db) => {
       })
   });
 
-  router.post('/:email', (req, res) => {
-    const transporter = nodemailer.createTransport({
+  router.post('/:email', async (req, res) => {
+    let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EM_NAME,
-        pass: process.env.EM_PW
+        pass: process.env.PASSWORD
       }
     });
-
     let mailOptions = {
       from: req.body.mail,
       to: req.params.email,
-      subject: 'Buying Your art',
-      text: 'That was easy!'
+      subject: 'buying your art',
+      text: req.body.subject
     };
+    console.log(mailOptions);
+    console.log('sending email');
 
-    transporter.sendMail(mailOptions, function(error, info) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
-    });
+    try {
+      await transporter.sendMail(mailOptions);
+
+    } catch (error) {
+      console.log(error);
+    }
+    console.log("Message sent: %s", info.messageId);
+    res.status(200).send('email has been sent');
+    // transporter.sendMail(mailOptions, function(error, info) {
+    //   console.log('sending email');
+    //   if (error) {
+    //     console.log(error);
+    //     res.status(500).send('an error has occured');
+    //   } else {
+    //     console.log('Email sent: ' + info.response);
+    //     res.status(200).send('email has been sent');
+    //   }
+    // });
   });
 
   return router;
