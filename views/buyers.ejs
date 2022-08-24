@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
     <script
       src="https://kit.fontawesome.com/8caf2b2a17.js"
       crossorigin="anonymous"
@@ -104,7 +104,7 @@
                 <div class="post-price"></div>
               </div>
               <div class="ai-card__favorite" id="heart-<%= card.id%>"> <!--"heart-<%= card.id%>" is sows id of every card-->
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart <%= card.is_favorite ? 'heart_red' : 'heart_grey' %>"></i>
               </div>
             </div>
             <button class="ai-card-btn btn btn--white">

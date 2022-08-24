@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
     <script
       src="https://kit.fontawesome.com/8caf2b2a17.js"
       crossorigin="anonymous"
@@ -46,7 +46,7 @@
         <section class="section-all">
           <!-- start of card -->
           <% for(let card of cards) { %>
-          <article class="ai-card">
+          <article class="ai-card" id="favorite-card-<%= card.id %>">
             <div class="ai-card__img-box">
               <img
                 src="<%= card.photo %>"
@@ -63,7 +63,7 @@
               <div class="poster">
                 <div class="post-price"></div>
               </div>
-              <div class="ai-card__favorite">
+              <div class="ai-card__favorite" id="heart-<%= card.id%>" style="color:red;">
                 <i class="fa-solid fa-heart"></i>
               </div>
             </div>

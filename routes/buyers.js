@@ -6,7 +6,13 @@ const { filterByCity } = require('../database');
 
 module.exports = (db) => {
   router.get('/', (req, res) => { //do query to db
-    db.query(`SELECT products.*, users.email, users.user_name FROM products
+    db.query(`SELECT products.*, users.email, users.user_name,
+              CASE
+                WHEN products.id in (SELECT products_id FROM favorites WHERE users_id = 1) 
+                  THEN true
+                ELSE false
+              END AS is_favorite
+              FROM products
               JOIN users ON users.id = seller_id
               LIMIT 12;`)
       .then((result) => { //result is what db returns
@@ -50,7 +56,7 @@ module.exports = (db) => {
       .then(products => { //result.rows now called products and passes to this function as an argument
         const features = products.filter(e => e.featured); //do filtration of elements where "featured" = true
         const templateVars = { cards: products, featured: features.slice(0, 3) };
-        res.render('buyers', templateVars)
+        res.render('buyers', templateVars) 
       })
   });
 
