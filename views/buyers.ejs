@@ -36,7 +36,6 @@
             >discover your next conversation piece</span
           >
         </h1>
-        
       </div>
     </header>
     <!-- end of header -->
@@ -67,7 +66,8 @@
               <div class="poster">
                 <div class="post-price"><%= cards.price%></div>
               </div>
-              <div class="ai-card__favorite" id="heart-<%= feature.id%>"> <!--"heart-<%= feature.id%>" is sows id of every card-->
+              <div class="ai-card__favorite" id="heart-<%= feature.id%>">
+                <!--"heart-<%= feature.id%>" is sows id of every card-->
                 <i class="fa-solid fa-heart"></i>
               </div>
             </div>
@@ -86,7 +86,7 @@
         <!-- start of All -->
         <section class="section-all">
           <!-- start of card -->
-          <% for(let card of cards) { %>
+          <% for(let card of cards) { %> <% if(!card.featured) { %>
           <article class="ai-card">
             <div class="ai-card__img-box">
               <img
@@ -105,23 +105,21 @@
               <div class="poster">
                 <div class="post-price"></div>
               </div>
-              <div class="ai-card__favorite" id="heart-<%= card.id%>"> <!--"heart-<%= card.id%>" is sows id of every card-->
-                <i class="fa-solid fa-heart <%= card.is_favorite ? 'heart_red' : 'heart_grey' %>"></i>
+              <div class="ai-card__favorite" id="heart-<%= card.id%>">
+                <!--"heart-<%= card.id%>" is sows id of every card-->
+                <i
+                  class="fa-solid fa-heart <%= card.is_favorite ? 'heart_red' : 'heart_grey' %>"
+                ></i>
               </div>
             </div>
             <button class="ai-card-btn btn btn--white">
               <a href="#">Contact seller</a>
             </button>
           </article>
-
-          <% } %>
+          <% } %> <% } %>
           <!-- end of card-->
         </section>
         <!-- end of of all -->
-
-        <div class="u-center-text u-margin-bottom-huge">
-          <a href="#" class="btn btn--green">Discover more</a>
-        </div>
       </section>
     </main>
     <footer class="footer">

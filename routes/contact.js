@@ -32,7 +32,7 @@ module.exports = (db) => {
 
   router.post('/:email', (req, res) => {
     var mailOptions = {
-      from: req.body.name,
+      from: req.body.mail,
       to: req.params.email,
       subject: 'Inquiry about your art',
       text: req.body.text
@@ -43,7 +43,7 @@ module.exports = (db) => {
         console.log(error);
       } else {
         console.log('Email sent: ' + info.response);
-        res.status(200).redirect('/sellers')
+        res.redirect('/sellers')
       }
     });
 

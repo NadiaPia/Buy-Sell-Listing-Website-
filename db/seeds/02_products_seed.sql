@@ -19,13 +19,13 @@ insert into products (name, photo, country, city, seller_id, description,prompts
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Loki is Betrayed', 'https://i.imgur.com/tLC4Rri.png', 'Canada', 'Calgary',5,'','', 150,false,  false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Puppers', 'https://i.imgur.com/OVWVy3J.png', 'Canada', 'Vancouver',4,'','', 150,true,  true);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('I Fits I Sits', 'https://i.imgur.com/YPtRTb0.png', 'Canada', 'Vancouver',6,'','', 150,true,  false);
-insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Adventure Time', 'https://i.imgur.com/85zCgf8.png', 'Canada', 'Toronto',6,'','', 150,false,  false);
+insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Adventure Time', 'https://i.imgur.com/85zCgf8.png', 'Canada', 'Toronto',2,'','', 150,false,  false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Man is a Temple On Fire', 'https://i.imgur.com/vdooxoN.png', 'Canada', 'Edmonton',7,'','', 150,false,  false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Ara chloroptera', 'https://i.imgur.com/u9ZvvV3.png', 'Canada', 'Saskatoon',7,'','', 180,false,  true);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Macaca nemestrina', 'https://i.imgur.com/q0lumfP.png', 'Canada', 'Regina',7,'','', 180,false, false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Woman is the Earth', 'https://i.imgur.com/DF0nrEQ.png', 'Canada', 'Vancouver',3,'','', 180,false, false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Under the Moon', 'https://i.imgur.com/v8OTYld.png', 'Canada', 'Calgary',7,'','', 180,true, false);
-insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Dancing Stone', 'https://i.imgur.com/oeHD3P5.png', 'Canada', 'Saskatoon',7,'','', 200,false, false);
+insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Dancing Stone', 'https://i.imgur.com/oeHD3P5.png', 'Canada', 'Saskatoon',2,'','', 200,false, false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Upon the Water', 'https://i.imgur.com/ooOCGpD.png', 'Canada', 'Winnipeg',3,'','', 200,false, true);
-insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Sacred Temple', 'https://i.imgur.com/CUOohbb.png', 'Canada', 'Victoria',3,'','', 200, true, false);
+insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Sacred Temple', 'https://i.imgur.com/CUOohbb.png', 'Canada', 'Victoria',2,'','', 200, true, false);
 

@@ -85,7 +85,7 @@
         <!-- start of All -->
         <section class="section-all">
           <!-- start of card -->
-          <% for(let card of cards) { %>
+          <% for(let card of cards) { %> <% if(card.seller_id != 2) { %>
           <!-- start of card -->
           <article class="ai-card">
             <div class="ai-card__img-box">
@@ -112,7 +112,7 @@
               <a href="/contact/<%= card.email%>">Contact seller</a>
             </button>
           </article>
-          <% } %>
+          <% } %> <% } %>
           <!-- end of card-->
         </section>
         <!-- end of of all -->
@@ -122,27 +122,28 @@
         </div>
         <section class="section-sell-art">
           <!-- start of card -->
+          <% for(let art of userArt) { %>
+          <!-- start of card -->
           <article class="ai-card">
             <div class="ai-card__img-box">
-              <img src="" class="ai-card__img" alt="dhjdhdhjdjd" />
+              <img
+                src="<%= art.photo %>"
+                class="ai-card__img"
+                alt="dhjdhdhjdjd"
+              />
             </div>
             <div class="ai-card__desc-box">
-              <p class="ai-card__p"></p>
-              <span class="artist"></span>
+              <p class="ai-card__p"><%= art.name %></p>
+              <span class="artist"><%= art.user_name %></span>
             </div>
             <div class="ai-card__sizes">
               <h4 class="ai-card-avail">availible in</h4>
               <div class="poster">
-                <div class="post-price"></div>
-              </div>
-              <div class="ai-card__favorite">
-                <i class="fa-solid fa-heart"></i>
+                <div class="post-price"><%= art.price %></div>
               </div>
             </div>
-            <button class="ai-card-btn btn btn--white">
-              <a href="/contact/">Contact seller</a>
-            </button>
           </article>
+          <% } %>
           <!-- end of card-->
         </section>
         <!-- end of sellers art -->
