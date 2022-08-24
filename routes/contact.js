@@ -42,8 +42,8 @@ module.exports = (db) => {
       if (error) {
         console.log(error);
       } else {
-        resredirect('/sellers')
         console.log('Email sent: ' + info.response);
+        res.redirect('/sellers')
       }
     });
 
