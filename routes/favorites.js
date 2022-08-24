@@ -5,8 +5,7 @@ const router = express.Router();
 module.exports = (db) => {
   router.get('/', (req, res) => { //do query to db
     db.query(`SELECT products.*, favorites.*, users.email, users.user_name
-    FROM favorites 
-    
+    FROM favorites     
     JOIN products ON favorites.products_id = products.id
     JOIN users ON users.id = products.seller_id
     WHERE favorites.users_id = 1;
@@ -41,8 +40,6 @@ module.exports = (db) => {
         res.render('buyers_favorites', templateVars)
       })
   });
-
-
 
   router.post('/', (req, res) => { //when we receive post request on /buyers/favorites/, do the callback
     const values = [
