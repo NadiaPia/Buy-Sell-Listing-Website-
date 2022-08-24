@@ -78,15 +78,15 @@ ul {
 }
 
 .contact form button {
-  background: #c9e6ff;
+  background: #e58f65ff;
   border: 0;
   text-transform: uppercase;
-  transition: 1.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .contact form button:hover,
 .contact form button:focus {
-  background: #92bde7;
+  background: #b07156ff;
   color: white;
   outline: 0;
 }
@@ -107,4 +107,8 @@ ul {
   .brand {
     text-align: left;
   }
+}
+
+.post-container {
+  padding-bottom: 12rem;
 }

@@ -48,7 +48,7 @@ const loginRoute = require("./routes/login");
 const contactRoute = require("./routes/contact");
 const buyersFavRoutes = require("./routes/favorites");
 const searchRoute = require("./routes/search");
-
+const postRoute = require("./routes/post")
 
 
 // Mount all resource routes
@@ -62,7 +62,7 @@ app.use('/login', loginRoute(db));
 app.use('/contact', contactRoute(db))
 app.use('/buyers/favorites', buyersFavRoutes(db));
 app.use('/search', searchRoute(db));
-
+app.use('/post', postRoute(db));
 
 
 // Note: mount other resources here, using the same pattern above
