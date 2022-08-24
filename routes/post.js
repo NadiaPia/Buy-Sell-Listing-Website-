@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+
+
 module.exports = (db) => {
   router.get('/', (req, res) => {
     db.query(`SELECT products.*, users.email, users.user_name FROM products
@@ -19,21 +21,16 @@ module.exports = (db) => {
   });
 
   router.post('/', (req, res) => {
-    var mailOptions = {
-      from: req.body.mail,
-      to: req.params.email,
-      subject: 'Inquiry about your art',
-      text: req.body.text
-    };
-    console.log(mailOptions);
-    transporter.sendMail(mailOptions, function(error, info) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-        res.redirect('/sellers')
-      }
-    });
+    const values = [req.body.name, req.body.photo, req.body.country, req.body.city, 2, req.body.description, req.body.prompts, req.body.price]
+    const postQuery = `
+          INSERT INTO products(name,photo,country,city,seller_id,description,prompts,price)
+          VALUES($1, $2, $3, $4, $5, $6, $7, $8)
+         RETURNING *;`
+    db.query(postQuery, values)
+      .then(res.redirect('sellers'))
+      .catch((err) => {
+        return console.error(err.message);
+      })
 
   });
 
