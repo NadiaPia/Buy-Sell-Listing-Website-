@@ -1,17 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 
-
-// const transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   host: 'smtp.gmail.com',
-//   auth: {
-//     user: process.env.EM_NAME,
-//     pass: process.env.EM_PW
-//   }
-// });
-
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  host: 'smtp.gmail.com',
+  auth: {
+    user: process.env.EMAIL_NAME,
+    pass: process.env.EMAIL_PW,
+  },
+  logger: true
+});
 
 module.exports = (db) => {
   router.get('/:email', (req, res) => {
@@ -31,41 +30,23 @@ module.exports = (db) => {
       })
   });
 
-  router.post('/:email', async (req, res) => {
-    let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EM_NAME,
-        pass: process.env.PASSWORD
-      }
-    });
-    let mailOptions = {
-      from: req.body.mail,
+  router.post('/:email', (req, res) => {
+    var mailOptions = {
+      from: req.body.name,
       to: req.params.email,
-      subject: 'buying your art',
-      text: req.body.subject
+      subject: 'Inquiry about your art',
+      text: req.body.text
     };
     console.log(mailOptions);
-    console.log('sending email');
+    transporter.sendMail(mailOptions, function(error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+        res.status(200).redirect('/sellers')
+      }
+    });
 
-    try {
-      await transporter.sendMail(mailOptions);
-
-    } catch (error) {
-      console.log(error);
-    }
-    console.log("Message sent: %s", info.messageId);
-    res.status(200).send('email has been sent');
-    // transporter.sendMail(mailOptions, function(error, info) {
-    //   console.log('sending email');
-    //   if (error) {
-    //     console.log(error);
-    //     res.status(500).send('an error has occured');
-    //   } else {
-    //     console.log('Email sent: ' + info.response);
-    //     res.status(200).send('email has been sent');
-    //   }
-    // });
   });
 
   return router;
