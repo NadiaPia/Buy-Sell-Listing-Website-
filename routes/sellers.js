@@ -11,8 +11,7 @@ module.exports = (db) => {
                 ELSE false
                 END AS is_favorite
                 FROM products
-              JOIN users ON users.id = seller_id
-              LIMIT 12;`)
+              JOIN users ON users.id = seller_id;`)
       .then((result) => {
         return result.rows;
       })
@@ -20,8 +19,9 @@ module.exports = (db) => {
         console.log(err.message);
       })
       .then(products => {
+        const sellersArt = products.filter(e => e.seller_id === 2);
         const features = products.filter(e => e.featured);
-        const templateVars = { cards: products, featured: features.slice(0, 3) };
+        const templateVars = { cards: products.slice(0, 12), featured: features.slice(0, 3), userArt: sellersArt };
         res.render('sellers', templateVars)
       })
   });

@@ -13,8 +13,7 @@ module.exports = (db) => {
                 ELSE false
               END AS is_favorite
               FROM products
-              JOIN users ON users.id = seller_id
-              LIMIT 12;`)
+              JOIN users ON users.id = seller_id;`)
       .then((result) => { //result is what db returns
         console.log('result is what db returns', result.rows)
         return result.rows; //result.rows looks like:
@@ -55,7 +54,7 @@ module.exports = (db) => {
       })
       .then(products => { //result.rows now called products and passes to this function as an argument
         const features = products.filter(e => e.featured); //do filtration of elements where "featured" = true
-        const templateVars = { cards: products, featured: features.slice(0, 3) };
+        const templateVars = { cards: products.slice(0, 12), featured: features.slice(0, 3) };
         res.render('buyers', templateVars)
       })
   });
