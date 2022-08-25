@@ -1,3 +1,9 @@
+$(document).ready(() => {
+  $(".filter").on("mouseover", filterShow)
+  $(".filter").on("mouseleave", filterHide)
+  $(".ai-card__favorite").on("click", favoriteClicked)
+
+});
 // Client facing scripts here
 
 
@@ -9,7 +15,7 @@ const filterShow = (event) => {
   $(".slideFilter").slideDown({
     start: function() {
       $(this).css({
-        display: "flex",
+        display: "grid",
       });
     },
   });
@@ -60,12 +66,6 @@ const favoriteClicked = function() {
 
 }
 
-$(document).ready(() => {
-  $(".filter").on("mouseover", filterShow)
-  $(".filter").on("mouseleave", filterHide)
-  $(".ai-card__favorite").on("click", favoriteClicked)
-
-});
 
 
 
