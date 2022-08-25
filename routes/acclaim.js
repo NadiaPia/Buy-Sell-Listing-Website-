@@ -4,36 +4,44 @@ const { filterProducts } = require('../database');
 
 module.exports = (db) => {
   router.get('/', (req, res) => {
-    db.query(`SELECT products.*, users.email, users.user_name,
-              CASE
-                WHEN products.id in (SELECT products_id FROM favorites WHERE users_id = 2)
+    const userId = req.cookies["user_id"];
+    const values = [userId]
+    const productsQuery = `SELECT products.*, users.email, users.user_name,
+                CASE
+                WHEN products.id in (SELECT products_id FROM favorites WHERE users_id = $1)
                 THEN true
                 ELSE false
                 END AS is_favorite
                 FROM products
-              JOIN users ON users.id = seller_id;`)
+              JOIN users ON users.id = seller_id;`
+    db.query(productsQuery, values)
       .then((result) => {
         return result.rows;
       })
       .catch((err) => {
-        console.log(err.message);
+        return console.log(err.message);
       })
       .then(products => {
-        const sellersArt = products.filter(e => e.seller_id === 2);
+        const userId = req.cookies["user_id"];
+        console.log(`the user ID is: `, userId);
+        const sellersArt = products.filter(e => e.seller_id == userId);
         const features = products.filter(e => e.featured);
         const templateVars = { cards: products.slice(0, 21), featured: features.slice(0, 3), userArt: sellersArt };
-        res.render('sellers', templateVars)
+        res.render('acclaim', templateVars)
       })
   });
 
   router.post('/filter', (req, res) => {
+    function capitalFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
     const available = req.body.available;
-    const city = req.body.city;
+    const city = capitalFirstLetter(req.body.city);
     const minprice = req.body.minprice;
     const maxprice = req.body.maxprice;
     filterProducts(city, minprice, maxprice, available).then((data) => {
       console.log(data);
-      const templateVars = { products: data }
+      const templateVars = { products: data, layout: false }
       res.render('search', templateVars)
 
     })
@@ -45,7 +53,8 @@ module.exports = (db) => {
                             WHERE id = $1;`
     db.query(deleteQuery, values)
       .then(() => {
-        return res.redirect('/sellers')
+        const userId = req.cookies["user_id"]
+        return res.redirect(`/login/${userId}`)
       })
       .catch((err) => { console.error(err.message) });
   })

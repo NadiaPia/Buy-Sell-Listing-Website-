@@ -15,7 +15,7 @@ module.exports = (db) => {
         console.log(err.message);
       })
       .then(products => {
-        const templateVars = { cards: products };
+        const templateVars = { cards: products, layout: false };
         res.render('post', templateVars)
       })
   });
@@ -28,7 +28,7 @@ module.exports = (db) => {
          RETURNING *;`
     db.query(postQuery, values)
       .then(() => {
-        return res.redirect('sellers')
+        return res.redirect('acclaim')
       })
       .catch((err) => {
         return console.error(err.message);
