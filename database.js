@@ -23,7 +23,7 @@ const filterProducts = function(city, minprice, maxprice) {
 
   console.log(initialQuery, queryArr);
   return db
-    // .query('SELECT * FROM products WHERE city = $1 AND price >= $2 AND price <= $3 AND sold != $4', [city, minprice, maxprice, available])
+
     .query(initialQuery, queryArr)
     .then((response) => {
       return response.rows;

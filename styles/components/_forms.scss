@@ -112,3 +112,8 @@ ul {
 .post-container {
   padding-bottom: 12rem;
 }
+
+.slideFilter {
+  display: grid;
+  grid-template-columns: 2fr;
+}

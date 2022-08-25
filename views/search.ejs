@@ -1,36 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <title>Search Results</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/icon_font.css" />
-  <link rel="stylesheet" href="./styles/main.css" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
-  <script src="https://kit.fontawesome.com/8caf2b2a17.js" crossorigin="anonymous"></script>
-</head>
+  <%- include('partials/_navbarAcclaim') %>
 
-<body>
-  <%- include('partials/_navbarBuyers') %>
-    <!-- header -->
-    <header class="buyers-header">
-      <div class="buyers-header__logo-box">
-        <img src="../img/artificial-intelligence-icon-png-14762.png" alt="site logo" class="buyers-header__logo" />
-      </div>
-      <div class="buyers-header__text-box">
-        <h1 class="buyers-heading-primary">
-          <span class="buyers-heading-primary--main">Browse and Buy</span>
-          <span class="buyers-heading-primary--sub">discover your next conversation piece</span>
-        </h1>
-
-      </div>
-    </header>
-    <!-- end of header -->
-    <main>
       <section class="section-sellers-art">
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="sellers-heading-secondary">Search Results</h2>
@@ -69,50 +39,5 @@
             <% } %>
 
         </section>
-    </main>
 
-    <footer class="footer">
-      <ul class="social-icons" id="footer-icons">
-        <!-- single item -->
-        <li>
-          <a href="https://www.facebook.com" class="social-icon">
-            <i class="fa-brands fa-square-facebook"></i>
-          </a>
-        </li>
-        <!-- end of single item -->
-        <!-- single item -->
-        <li>
-          <a href="https://www.twitter.com" class="social-icon">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </li>
-        <!-- end of single item -->
-        <!-- single item -->
-        <li>
-          <a href="https://www.twitter.com" class="social-icon">
-            <i class="fa-brands fa-squarespace"></i>
-          </a>
-        </li>
-        <!-- end of single item -->
-        <!-- single item -->
-        <li>
-          <a href="https://www.twitter.com" class="social-icon">
-            <i class="fa-brands fa-behance"></i>
-          </a>
-        </li>
-        <!-- end of single item -->
-        <!-- single item -->
-        <li>
-          <a href="https://www.twitter.com" class="social-icon">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </li>
-        <!-- end of single item -->
-      </ul>
 
-      <p>&copy; <span id="date"></span> Acclaim. All rights reserved.</p>
-    </footer>
-
-</body>
-
-</html>

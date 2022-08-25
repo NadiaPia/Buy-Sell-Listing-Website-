@@ -28,7 +28,9 @@
 .filter {
   position: relative;
 }
-
+::placeholder {
+  text-align: center;
+}
 .slideFilter {
   background-color: var(--color-primary);
   display: none;
@@ -37,10 +39,35 @@
   transform: translate(100%, -50%);
 }
 
+.filter-products {
+  text-align: left;
+}
+.filter-checkbox,
+.filter-search,
+.filter-min-max {
+  text-align: center;
+}
+.filter-city {
+  width: 100%;
+}
+
 @media only screen and (max-width: 600px) {
   .slideFilter {
+    width: 21.25rem;
     top: 0;
     transform: translate(25%, -100%);
+    margin-right: 5.25rem;
+  }
+  .filter-products {
+    text-align: left;
+  }
+  .filter-checkbox,
+  .filter-search,
+  .filter-min-max {
+    text-align: center;
+  }
+  .filter-city {
+    width: 100%;
   }
 }
 
@@ -112,8 +139,12 @@
   }
   .nav-link {
     justify-content: center;
+    margin: 0;
+    padding: 0;
   }
-
+  .nav-item {
+    padding: 0;
+  }
   main {
     margin: 0;
   }
