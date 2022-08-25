@@ -1,12 +1,14 @@
 <!-- start of section -->
-<%- include('partials/_navbarAcclaim') %>
+<%- include('partials/_navbarAcclaim') %> <% if(userId == 2) {%>
 <a href="/post" class="sellers-btn btn btn--white btn--animated"
   >Post your art</a
 >
+<% }%>
 <section class="section-sellers-art">
   <div class="u-center-text u-margin-bottom-big">
     <h2 class="sellers-heading-secondary">our featured art</h2>
   </div>
+
   <!-- start of featured -->
   <section class="section-featured">
     <% for(let feature of featured) { %>
@@ -29,7 +31,11 @@
           <div class="post-price"><%= feature.price %></div>
         </div>
         <div class="ai-card__favorite">
-          <i class="fa-solid fa-heart"></i>
+          <i
+            class="fa-solid fa-heart featured featured_<%= feature.id%>"
+            data-userId="<%= userId%> "
+            data-featureId="<%= feature.id%> "
+          ></i>
         </div>
       </div>
       <button class="ai-card-btn btn btn--white">
@@ -50,7 +56,11 @@
     <!-- start of card -->
     <article class="ai-card">
       <div class="ai-card__img-box">
-        <img src="<%= card.photo %>" class="ai-card__img" alt="dhjdhdhjdjd" />
+        <img
+          src="<%= card.photo %>"
+          class="ai-card__img"
+          alt="<%= card.name %>"
+        />
       </div>
       <div class="ai-card__desc-box">
         <p class="ai-card__p"><%= card.name %></p>
@@ -62,7 +72,11 @@
           <div class="post-price"><%= card.price %></div>
         </div>
         <div class="ai-card__favorite">
-          <i class="fa-solid fa-heart"></i>
+          <i
+            class="fa-solid fa-heart allArt allArt_<%= card.id%>"
+            data-allUserId="<%= userId%> "
+            data-cardId="<%= card.id%> "
+          ></i>
         </div>
       </div>
       <button class="ai-card-btn btn btn--white">
@@ -73,6 +87,7 @@
     <!-- end of card-->
   </section>
   <!-- end of of all -->
+  <% if(userId == 2) {%>
   <!-- start of sellers art -->
   <div class="u-center-text u-margin-bottom-big">
     <h2 class="sellers-heading-secondary">Your Art</h2>
@@ -108,6 +123,7 @@
     <% } %>
     <!-- end of card-->
   </section>
+  <% } %>
   <!-- end of sellers art -->
   <div class="u-center-text u-margin-bottom-huge"></div>
 </section>

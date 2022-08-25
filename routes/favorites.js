@@ -21,30 +21,13 @@ module.exports = (db) => {
       })
       .then(products => {
         const userId = req.cookies["user_id"];
-        const templateVars = { cards: products };
+        const templateVars = { cards: products, userId };
         res.render('acclaim_favorites', templateVars)
       })
   });
 
-  router.post('/', (req, res) => {
-    const values = [
-      req.body.products_id,
-      req.body.users_id
-    ];
-    db.query(`INSERT INTO favorites(products_id, users_id)
-    VALUES ($1, $2) RETURNING *;`, values)
-      .then((result) => {
-        res.json(result.rows);
-
-      })
-      .catch((err) => {
-        console.log(err.message);
-      })
-
-  });
-
-
   router.delete('/', (req, res) => {
+    console.log('=data', req.body);
     const values = [
       req.body.products_id,
       req.body.users_id
@@ -53,15 +36,28 @@ module.exports = (db) => {
     RETURNING *;`, values)
       .then((result) => {
         res.json(result.rows);
-
       })
       .catch((err) => {
         console.log(err.message);
       })
 
   });
+  router.post('/click', (req, res) => {
+    const { products_id, users_id } = req.body;
+    const values = [
+      req.body.products_id,
+      req.body.users_id
+    ];
+    db.query(`INSERT INTO favorites(products_id, users_id)
+    VALUES ($1, $2) RETURNING *;`, [products_id, users_id])
+      .then((result) => {
+        res.json(result.rows);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      })
+  })
   return router;
-
 };
 
 

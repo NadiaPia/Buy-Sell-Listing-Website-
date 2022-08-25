@@ -26,7 +26,7 @@ module.exports = (db) => {
         console.log(`the user ID is: `, userId);
         const sellersArt = products.filter(e => e.seller_id == userId);
         const features = products.filter(e => e.featured);
-        const templateVars = { cards: products.slice(0, 21), featured: features.slice(0, 3), userArt: sellersArt };
+        const templateVars = { cards: products.slice(0, 21), featured: features.slice(0, 3), userArt: sellersArt, userId };
         res.render('acclaim', templateVars)
       })
   });

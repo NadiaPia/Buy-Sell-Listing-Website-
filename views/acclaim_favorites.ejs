@@ -1,10 +1,18 @@
-<section class="section-buyers-art">
+<%- include('partials/_navbarAcclaim') %>
+
+<section class="section-sellers-art">
+  <div class="u-center-text u-margin-bottom-big">
+    <h2 class="sellers-heading-secondary">Favorite Results</h2>
+  </div>
   <section class="section-all">
-    <!-- start of card -->
     <% for(let card of cards) { %>
     <article class="ai-card" id="favorite-card-<%= card.id %>">
       <div class="ai-card__img-box">
-        <img src="<%= card.photo %>" class="ai-card__img" alt="dhjdhdhjdjd" />
+        <img
+          src="<%= card.photo %>"
+          class="ai-card__img"
+          alt="<%= card.name%>"
+        />
       </div>
       <div class="ai-card__desc-box">
         <h3 class="ai-card__h3"><%= card.name %></h3>
@@ -20,16 +28,18 @@
           id="heart-<%= card.id%>"
           style="color: red"
         >
-          <i class="fa-solid fa-heart"></i>
+          <i
+            class="fa-solid fa-heart favArt favArt_<%= card.id%>"
+            data-favUserId="<%= userId%> "
+            data-cardId="<%= card.id%> "
+          ></i>
         </div>
       </div>
       <button class="ai-card-btn btn btn--white">
-        <a href="#">Contact seller</a>
+        <a href="/contact/<%= card.email%>">Contact seller</a>
       </button>
     </article>
 
     <% } %>
-    <!-- end of card-->
   </section>
-  <!-- end of of all -->
 </section>
