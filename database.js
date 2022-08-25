@@ -5,7 +5,7 @@ const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect();
 
-const filterProducts = function(city, minprice, maxprice, available) {
+const filterProducts = function(city, minprice, maxprice) {
   let initialQuery = 'SELECT * FROM products'
   let queryArr = [];
 
@@ -23,7 +23,7 @@ const filterProducts = function(city, minprice, maxprice, available) {
 
   console.log(initialQuery, queryArr);
   return db
-    // .query('SELECT * FROM products WHERE city = $1 AND price >= $2 AND price <= $3 AND sold != $4', [city, minprice, maxprice, available])
+
     .query(initialQuery, queryArr)
     .then((response) => {
       return response.rows;
