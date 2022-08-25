@@ -63,9 +63,7 @@
             </div>
             <div class="ai-card__sizes">
               <h4 class="ai-card-avail">availible in</h4>
-              <div class="poster">
-                <div class="post-price"><%= cards.price%></div>
-              </div>
+              
               <div class="ai-card__favorite" id="heart-<%= feature.id%>">
                 <!--"heart-<%= feature.id%>" is sows id of every card-->
                 <i class="fa-solid fa-heart"></i>
@@ -95,11 +93,14 @@
                 alt="dhjdhdhjdjd"
               />
             </div>
+
             <div class="ai-card__desc-box">
               <h3 class="ai-card__h3"><%= card.name %></h3>
               <span class="artist"><%= card.user_name %></span>
-              <span class="price"><%= card.price %></span>
+              <span class="price"><%= card.price %></span>              
+              <span class="price"><%= card.city %></span>
             </div>
+            
             <div class="ai-card__sizes">
               <h4 class="ai-card-avail">availible in</h4>
               <div class="poster">
