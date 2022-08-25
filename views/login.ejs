@@ -12,7 +12,10 @@
       rel="stylesheet"
     />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
+    <script
+      src="https://kit.fontawesome.com/8caf2b2a17.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <main class="login-main__container">
@@ -27,23 +30,40 @@
 
         <div class="login-header__text-box">
           <a
-            href="/buyers"
+            href="/login/1"
             class="login-btn login-buyer-btn btn btn--white btn--animated"
-            >buyer</a
+            >buyers</a
           >
+          <!-- <form action="/login/1" method="get">
+            <input
+              type="submit"
+              value="buyers"
+              name="buyers_id"
+              id="frm1_submit"
+            />
+          </form> -->
+
           <h1 class="login-heading-primary">
             <span class="login-heading-primary--main">Login</span>
           </h1>
           <a
-            href="/sellers"
+            href="/login/2"
             class="login-btn login-seller-btn btn btn--white btn--animated"
-            >seller</a
+            >sellers</a
           >
+          <!-- <form action="/login/:sellers_id" method="get">
+            <input
+              type="submit"
+              value="sellers"
+              name="sellers_id"
+              id="frm1_submit"
+            />
+          </form> -->
         </div>
       </header>
     </main>
     <footer class="footer">
-      <ul class="social-icons">
+      <ul class="social-icons" id="footer-icons">
         <!-- single item -->
         <li>
           <a href="https://www.facebook.com" class="social-icon">
@@ -80,8 +100,43 @@
         </li>
         <!-- end of single item -->
       </ul>
-
       <p>&copy; <span id="date"></span> Acclaim. All rights reserved.</p>
     </footer>
   </body>
 </html>
+
+<!-- <main class="login-main__container">
+  <header class="login-header">
+    <div class="login-header__logo-box">
+      <img
+        src="../img/artificial-intelligence-icon-png-14762.png"
+        alt="site logo"
+        class="login-header__logo"
+      />
+    </div>
+
+    <div class="login-header__text-box">
+      <form action="/buyer" method="POST">
+        <button
+          class="login-btn login-seller-btn btn btn--white btn--animated"
+          type="submit"
+          name="buyer"
+        >
+          buyer
+        </button>
+      </form>
+      <h1 class="login-heading-primary">
+        <span class="login-heading-primary--main">Login</span>
+      </h1>
+      <form action="/seller" method="POST">
+        <button
+          class="login-btn login-seller-btn btn btn--white btn--animated"
+          type="submit"
+          name="seller"
+        >
+          seller
+        </button>
+      </form>
+    </div>
+  </header>
+</main> -->

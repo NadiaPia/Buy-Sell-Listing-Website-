@@ -26,7 +26,7 @@ module.exports = (db) => {
       .then(products => {
         const features = products.filter(e => e.featured);
         const templateVars = { cards: products, featured: features.slice(0, 3), card_id: req.params.email };
-        res.render('contact', templateVars)
+        res.render('contact', templateVars, { layout: false })
       })
   });
 
@@ -43,7 +43,7 @@ module.exports = (db) => {
         console.log(error);
       } else {
         console.log('Email sent: ' + info.response);
-        res.redirect('/sellers')
+        res.redirect('/acclaim')
       }
     });
 

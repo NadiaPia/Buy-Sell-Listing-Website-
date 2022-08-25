@@ -28,7 +28,7 @@ module.exports = (db) => {
          RETURNING *;`
     db.query(postQuery, values)
       .then(() => {
-        return res.redirect('sellers')
+        return res.redirect('acclaim')
       })
       .catch((err) => {
         return console.error(err.message);
