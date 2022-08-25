@@ -25,8 +25,8 @@ module.exports = (db) => {
       })
       .then(products => {
         const features = products.filter(e => e.featured);
-        const templateVars = { cards: products, featured: features.slice(0, 3), card_id: req.params.email };
-        res.render('contact', templateVars, { layout: false })
+        const templateVars = { cards: products, featured: features.slice(0, 3), card_id: req.params.email, layout: false };
+        res.render('contact', templateVars)
       })
   });
 

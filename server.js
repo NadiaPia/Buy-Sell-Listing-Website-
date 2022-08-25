@@ -43,13 +43,10 @@ app.use(expressLayouts);
 // Note: Feel free to replace the example routes below with your own
 
 
-const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
-const buyersRoutes = require("./routes/buyers");
 const acclaimRoutes = require("./routes/acclaim");
 const loginRoute = require("./routes/login");
 const contactRoute = require("./routes/contact");
-const buyersFavRoutes = require("./routes/favorites");
+const acclaimFavRoutes = require("./routes/favorites");
 const searchRoute = require("./routes/search");
 const postRoute = require("./routes/post")
 
@@ -57,13 +54,10 @@ const postRoute = require("./routes/post")
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 
-app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
-app.use('/buyers', buyersRoutes(db));
 app.use('/acclaim', acclaimRoutes(db));
 app.use('/login', loginRoute(db));
 app.use('/contact', contactRoute(db))
-app.use('/buyers/favorites', buyersFavRoutes(db));
+app.use('/acclaim/favorites', acclaimFavRoutes(db));
 app.use('/search', searchRoute(db));
 app.use('/post', postRoute(db));
 

@@ -15,7 +15,7 @@ module.exports = (db) => {
         console.log(err.message);
       })
       .then(products => {
-        const templateVars = { cards: products };
+        const templateVars = { cards: products, layout: false };
         res.render('post', templateVars)
       })
   });
