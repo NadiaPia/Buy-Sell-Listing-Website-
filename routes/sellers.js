@@ -39,5 +39,15 @@ module.exports = (db) => {
     })
   })
 
+  router.post('/:id', (req, res) => {
+    const values = [req.params.id]
+    const deleteQuery = `DELETE FROM products
+                            WHERE id = $1;`
+    db.query(deleteQuery, values)
+      .then(() => {
+        return res.redirect('/sellers')
+      })
+      .catch((err) => { console.error(err.message) });
+  })
   return router;
 };

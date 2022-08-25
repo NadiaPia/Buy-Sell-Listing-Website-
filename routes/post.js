@@ -27,7 +27,9 @@ module.exports = (db) => {
           VALUES($1, $2, $3, $4, $5, $6, $7, $8)
          RETURNING *;`
     db.query(postQuery, values)
-      .then(res.redirect('sellers'))
+      .then(() => {
+        return res.redirect('sellers')
+      })
       .catch((err) => {
         return console.error(err.message);
       })

@@ -141,6 +141,15 @@
               <div class="poster">
                 <div class="post-price"><%= art.price %></div>
               </div>
+              <form action="/sellers/<%= art.id%>" method="POST">
+                <button
+                  class="ai-card-btn del-btn btn btn--white"
+                  type="submit"
+                  name="delete"
+                >
+                  delete
+                </button>
+              </form>
             </div>
           </article>
           <% } %>
