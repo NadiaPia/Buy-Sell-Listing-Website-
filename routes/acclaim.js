@@ -6,7 +6,6 @@ module.exports = (db) => {
   router.get('/', (req, res) => {
     const userId = req.cookies["user_id"];
     const values = [userId]
-
     const productsQuery = `SELECT products.*, users.email, users.user_name,
                 CASE
                 WHEN products.id in (SELECT products_id FROM favorites WHERE users_id = $1)
@@ -17,7 +16,6 @@ module.exports = (db) => {
               JOIN users ON users.id = seller_id;`
     db.query(productsQuery, values)
       .then((result) => {
-        console.log("result.rows", result.rows)
         return result.rows;
       })
       .catch((err) => {
