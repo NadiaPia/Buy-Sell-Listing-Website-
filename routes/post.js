@@ -33,7 +33,6 @@ module.exports = (db) => {
       .catch((err) => {
         return console.error(err.message);
       })
-
   });
 
   return router;
