@@ -40,9 +40,8 @@ module.exports = (db) => {
     const maxprice = req.body.maxprice;
     filterProducts(city, minprice, maxprice, available).then((data) => {
       console.log(data);
-      const templateVars = { products: data, layout: false }
+      const templateVars = { products: data }
       res.render('search', templateVars)
-
     })
   })
 

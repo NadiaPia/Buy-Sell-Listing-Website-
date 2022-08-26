@@ -47,7 +47,7 @@ const acclaimRoutes = require("./routes/acclaim");
 const loginRoute = require("./routes/login");
 const contactRoute = require("./routes/contact");
 const acclaimFavRoutes = require("./routes/favorites");
-const searchRoute = require("./routes/search");
+// const searchRoute = require("./routes/search");
 const postRoute = require("./routes/post")
 
 
@@ -58,7 +58,7 @@ app.use('/acclaim/favorites', acclaimFavRoutes(db));
 app.use('/acclaim', acclaimRoutes(db));
 app.use('/login', loginRoute(db));
 app.use('/contact', contactRoute(db))
-app.use('/search', searchRoute(db));
+// app.use('/search', searchRoute(db));
 app.use('/post', postRoute(db));
 
 
