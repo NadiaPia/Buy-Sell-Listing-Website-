@@ -28,8 +28,11 @@
         <div class="poster">
           <div class="post-price"><%= feature.price %></div>
         </div>
-        <div class="ai-card__favorite">
-          <i class="fa-solid fa-heart"></i>
+        <div 
+        class="ai-card__favorite"
+        id="heart-<%= feature.id%>"
+        >
+        <i class="fa-solid fa-heart <%= feature.is_favorite ? 'heart_red' : 'heart_grey' %>"></i>
         </div>
       </div>
       <button class="ai-card-btn btn btn--white">
@@ -61,8 +64,12 @@
         <div class="poster">
           <div class="post-price"><%= card.price %></div>
         </div>
-        <div class="ai-card__favorite">
-          <i class="fa-solid fa-heart"></i>
+        <div 
+          class="ai-card__favorite"
+          id="heart-<%= card.id%>"
+          >
+          
+          <i class="fa-solid fa-heart <%= card.is_favorite ? 'heart_red' : 'heart_grey' %>"></i>
         </div>
       </div>
       <button class="ai-card-btn btn btn--white">

@@ -54,10 +54,10 @@ const postRoute = require("./routes/post")
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 
+app.use('/acclaim/favorites', acclaimFavRoutes(db));
 app.use('/acclaim', acclaimRoutes(db));
 app.use('/login', loginRoute(db));
 app.use('/contact', contactRoute(db))
-app.use('/acclaim/favorites', acclaimFavRoutes(db));
 app.use('/search', searchRoute(db));
 app.use('/post', postRoute(db));
 
@@ -75,7 +75,10 @@ app.get("/", (req, res) => {
 
 app.get("/login/:user_id", (req, res) => {
   res.cookie('user_id', req.params.user_id);
-  console.log(req.cookies["user_id"]);
+  //console.log("res", req.params.user_id)
+  
+  console.log("req.cookiesssssss user_id", req.cookies["user_id"]);
+  console.log("req.cookiesssssss ", req.cookies)
   res.redirect('/acclaim');
 })
 

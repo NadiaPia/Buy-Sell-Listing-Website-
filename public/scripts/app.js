@@ -1,9 +1,4 @@
-$(document).ready(() => {
-  $(".filter").on("mouseover", filterShow)
-  $(".filter").on("mouseleave", filterHide)
-  $(".ai-card__favorite").on("click", favoriteClicked)
 
-});
 // Client facing scripts here
 
 
@@ -29,18 +24,23 @@ const filterHide = () => {
 // -------------------------------------------
 
 const favoriteClicked = function() {
-  const userId = req.cookies["user_id"]
+  //const userId = req.cookies["user_id"]
+  //console.log("user_id", req.cookies)
+  const userId = Number(document.cookie.split("user_id=").pop());
+  //console.log("userIDDDDDDDDDDDDDD", userId)
   const isFavorite = $(this).children('i').css("color") === 'rgb(255, 0, 0)';
-  const productId = $(this).attr("id").split("heart-").pop();
+  //console.log($(this))
+  const productId = Number($(this).attr("id").split("heart-").pop());
   const data = { users_id: userId, products_id: productId };
 
   const addFavorite = function(heartIcon) {
-
+    console.log('Add Favorite', data)
     $.ajax("/acclaim/favorites", { method: "POST", data })
       .then((res) => {
         heartIcon.children('i').css({
           color: 'red'
         })
+        .catch(err => console.log('AJAX POST to acclaim/favorites FAIL: ', err))
       });
   }
 
@@ -61,7 +61,12 @@ const favoriteClicked = function() {
 
 }
 
+$(document).ready(() => {
+  $(".filter").on("mouseover", filterShow)
+  $(".filter").on("mouseleave", filterHide)
+  $(".ai-card__favorite").on("click", favoriteClicked)
 
+});
 
 
 

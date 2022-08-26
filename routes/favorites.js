@@ -4,6 +4,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get('/', (req, res) => {
+    console.log('GET FAVORITES')
     const userId = req.cookies["user_id"]
     const values = [userId];
     const favQuery = `SELECT products.*, favorites.*, users.email, users.user_name
@@ -31,6 +32,7 @@ module.exports = (db) => {
       req.body.products_id,
       req.body.users_id
     ];
+    console.log('--- POST FAVORITE: ', values)
     db.query(`INSERT INTO favorites(products_id, users_id)
     VALUES ($1, $2) RETURNING *;`, values)
       .then((result) => {
@@ -39,6 +41,7 @@ module.exports = (db) => {
       })
       .catch((err) => {
         console.log(err.message);
+        res.send(err)
       })
 
   });
@@ -49,6 +52,7 @@ module.exports = (db) => {
       req.body.products_id,
       req.body.users_id
     ];
+    console.log('--- DELETE FAVORITE: ', values)
     db.query(`DELETE FROM favorites WHERE products_id = $1 AND users_id = $2
     RETURNING *;`, values)
       .then((result) => {
