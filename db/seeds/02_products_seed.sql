@@ -1,6 +1,6 @@
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured,sold) values ('Morning Do', 'https://i.imgur.com/GNVetZ4.png', 'Canada', 'Toronto',2,'','', 75,true, true);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Wings', 'https://i.imgur.com/QGiXu5u.png', 'Canada', 'Toronto',3,'','', 75,false, false);
-insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Plague Dr. WHo', 'https://i.imgur.com/Pjj3V04.png', 'Canada', 'Vancouver',4,'','', 75,false, false);
+insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Plague Dr. Who', 'https://i.imgur.com/Pjj3V04.png', 'Canada', 'Vancouver',4,'','', 75,false, false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Gossimer', 'https://i.imgur.com/E8z407M.png', 'Canada', 'Victoria',5,'','', 75,false, true);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Sufi Swirls', 'https://i.imgur.com/IVw0mOO.png', 'Canada', 'Calgary',6,'','', 80,true, false);
 insert into products (name, photo, country, city, seller_id, description,prompts,price,featured, sold) values ('Fungi Among I', 'https://i.imgur.com/p8OzFkO.png', 'Canada', 'Winnipeg',7,'','', 80,false, false);

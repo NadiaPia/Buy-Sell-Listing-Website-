@@ -49,10 +49,12 @@
   font-size: 3rem;
 }
 
-.heart { /* after rendering the buyers.ejs jquery in buyers.js asks for checking whether card is in favorite table and if so, colors heart to red, otherwise - color to grey*/
-  &_red {color: red;}
-  &_grey {color: grey;}
+.heart {
+  &_red {
+    color: red;
+  }
+  &_grey {
+    color: grey;
+  }
 }
-
-
 /*Nadia added heart grey finish--------------------------------------------*/
