@@ -6,7 +6,7 @@ const db = new Pool(dbParams);
 db.connect();
 
 const filterProducts = function(city, minprice, maxprice) {
-  let initialQuery = 'SELECT * FROM products'
+  let initialQuery = 'SELECT products.*, users.email FROM products JOIN users ON users.id = seller_id'
   let queryArr = [];
 
   if (city) {
