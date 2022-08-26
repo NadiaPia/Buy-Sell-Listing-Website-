@@ -82,6 +82,15 @@ app.get("/login/:user_id", (req, res) => {
   res.redirect('/acclaim');
 })
 
+// app.post("/logout", (req, res) => {
+//   res.clearCookie('user_id');
+// });
+
+app.get('/logout', (req, res) => {
+  res.clearCookie('user_id');
+  res.redirect("/");
+})
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

@@ -33,7 +33,7 @@
       <!-------------------------------------------- new icon------------------------ -->
 
       <li class="nav-item">
-        <a href="/acclaim" class="nav-link">
+        <a href="/buyers" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
             <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
             <path
@@ -46,7 +46,7 @@
       <!-------------------------------------------- new icon------------------------ -->
 
       <li class="nav-item">
-        <a href="/acclaims/favorites" class="nav-link">
+        <a href="/buyers/favorites" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
             <path
@@ -67,27 +67,25 @@
           </svg>
           <span class="link-text">filter</span>
         </a>
+
         <div class="slideFilter">
-          <form action="/acclaim/filter" method="post" id="serch-products-form" class="search-products-form">
-            <div class="filter-products filter-city">
+          <form action="/buyers/filter" method="post" id="serch-products-form" class="serch-products-form">
+            <div class="filter-products">
+              <label for="city">City</label>
               <input autocomplete="off" type="text" name="city" placeholder="City" id="serch-products-form__city" />
             </div>
 
-            <div class="filter-products filter-min-max">
-              <input style="width: 70px" type="text" name="minprice" placeholder="Minimum"
+            <div class="filter-products">
+              <label>Price</label>
+              <input style="width: 70px" type="text" name="minprice" placeholder="Minimum Cost"
                 id="serch-products-form__minimum-price-per-night" />
               <label>to</label>
-              <input style="width: 70px" type="text" name="maxprice" placeholder="Maximum"
+              <input style="width: 70px" type="text" name="maxprice" placeholder="Maximum Cost"
                 id="serch-products-form__maximum-price-per-night" />
             </div>
-
-            <div class="filter-products filter-checkbox">
-              <label for="available">Available</label>
-              <input type="checkbox" name="available" />
-            </div>
-
-            <div class="filter-products filter-search">
+            <div class="filter-products">
               <button>Search</button>
+              <a id="serch-products-form__cancel" href="#">Cancel</a>
             </div>
           </form>
         </div>
@@ -96,7 +94,7 @@
       <!-- Nadia finish-->
 
       <li class="nav-item">
-        <a href="/logout" class="nav-link">
+        <a href="/" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
             <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
             <path
