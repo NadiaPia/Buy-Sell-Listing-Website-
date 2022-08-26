@@ -62,8 +62,6 @@ app.use('/search', searchRoute(db));
 app.use('/post', postRoute(db));
 
 
-// Note: mount other resources here, using the same pattern above
-
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
@@ -75,16 +73,8 @@ app.get("/", (req, res) => {
 
 app.get("/login/:user_id", (req, res) => {
   res.cookie('user_id', req.params.user_id);
-  //console.log("res", req.params.user_id)
-  
-  console.log("req.cookiesssssss user_id", req.cookies["user_id"]);
-  console.log("req.cookiesssssss ", req.cookies)
   res.redirect('/acclaim');
 })
-
-// app.post("/logout", (req, res) => {
-//   res.clearCookie('user_id');
-// });
 
 app.get('/logout', (req, res) => {
   res.clearCookie('user_id');

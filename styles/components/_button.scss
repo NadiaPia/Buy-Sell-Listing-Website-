@@ -117,3 +117,28 @@ a:active {
   text-decoration: none;
   color: var(--color-grey-dark);
 }
+
+.sellers-btn {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(255, 160, 113, 0.8),
+    rgba(208, 102, 49, 0.8)
+  );
+
+  &--white {
+    background-color: rgba(255, 160, 113, 0.8);
+    color: var(--color-grey-dark);
+
+    &::after {
+      background-color: var(--color-white);
+    }
+  }
+}
+
+.post-btn-container {
+  display: grid;
+  grid-template-columns: 22rem;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 7.5rem;
+}

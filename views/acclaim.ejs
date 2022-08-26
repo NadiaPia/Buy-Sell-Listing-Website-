@@ -1,7 +1,6 @@
 <!-- start of section -->
+<%- include('partials/_navbarAcclaim') %>
 <section class="section-sellers-art">
-  <%- include('partials/_navbarAcclaim') %>
-
   <div class="u-center-text u-margin-bottom-big">
     <h2 class="sellers-heading-secondary">our featured art</h2>
   </div>
@@ -80,10 +79,10 @@
   <div class="u-center-text u-margin-bottom-big">
     <h2 class="sellers-heading-secondary">Your Art</h2>
   </div>
-  <% if(userId == 2) {%>}
-  <a href="/post" class="sellers-btn btn btn--white btn--animated"
-    >Post your art</a
-  >
+  <% if(userId == 2) {%>
+  <div class="post-btn-container">
+    <a href="/post" class="sellers-btn btn sellers-btn--white">Post your art</a>
+  </div>
   <%}%>
   <section class="section-sell-art">
     <!-- start of card -->
