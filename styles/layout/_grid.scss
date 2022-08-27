@@ -45,8 +45,15 @@
   grid-template-rows: 1fr;
   justify-content: space-around;
   align-content: center;
-  gap: 2rem;
-  margin-left: 2.5rem;
+  gap: 5rem;
+  margin-left: 1.5rem;
+  @include respond(tab-land) {
+    margin-left: 3.5rem;
+  }
+
+  @include respond(phone) {
+    margin-left: 4rem;
+  }
 }
 
 .section-featured {

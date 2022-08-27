@@ -301,7 +301,19 @@ body {
 // card title h3 styling
 
 .ai-card__p {
+  margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-self: flex-start;
+  font-size: larger;
+  // align-items: center;
+}
+
+.artist {
+  font-size: 1.5rem;
+}
+
+.post-price {
+  font-size: larger;
+  text-align: center;
 }
